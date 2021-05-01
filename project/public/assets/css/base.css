@@ -1,0 +1,18 @@
+body {
+    text-align: justify;
+}
+@media only screen and (max-device-width:980px) {
+    body {
+        font-size: 1.5rem;
+        text-align: justify;
+    }
+    nav, .navbar-brand {
+        font-size: 2rem;
+    }
+    .navbar-toggler {
+        font-size: 3rem;
+    }
+    h4, h5, h6, .contact, .mentions, .submit {
+        font-size: 1.75rem;
+    }
+}
