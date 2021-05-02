@@ -29,7 +29,7 @@ services:
         container_name: maildev_docker_mariage
         command: bin/maildev --web 80 --smtp 25 --hide-extensions STARTTLS
         ports:
-            -   "8081:80"
+            -   "8081:25"
         restart: always
         networks:
             - dev
