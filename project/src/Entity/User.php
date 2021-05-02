@@ -45,11 +45,6 @@ class User implements UserInterface
      */
     private $actif;
 
-    /**
-     * @ORM\Column(type="string", length=255, nullable=true)
-     */
-    private $numeroConfirmation;
-
     public function getId(): ?int
     {
         return $this->id;
@@ -139,18 +134,6 @@ class User implements UserInterface
     public function setActif(bool $actif): self
     {
         $this->actif = $actif;
-
-        return $this;
-    }
-
-    public function getNumeroConfirmation(): ?string
-    {
-        return $this->numeroConfirmation;
-    }
-
-    public function setNumeroConfirmation(?string $numeroConfirmation): self
-    {
-        $this->numeroConfirmation = $numeroConfirmation;
 
         return $this;
     }

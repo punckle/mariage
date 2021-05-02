@@ -1,37 +1,46 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Utilisateurs{% endblock %}
+{% block title %}Invités{% endblock %}
 
 {% block stylesheets %}
-    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/admin.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/home.css') }}">
 {% endblock %}
 
 {% block body %}
 
     <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light masthead text-white">
         <div class="col-md-5 p-lg-5 mx-auto my-5">
-            <h1 class="display-4 font-weight-normal">Les utilisateurs</h1>
+            <h1 class="display-4 font-weight-normal">Les invités</h1>
         </div>
     </div>
 
     <div class="position-relative overflow-hidden text-center">
         <div class="p-lg-5 mx-auto my-2">
-            {% if users|length > 0 %}
+            <a href="{{ path('guest_new') }}" class="btn btn-primary">Ajouter des invités</a>
+        </div>
+        <div class="p-lg-5 mx-auto my-2">
+            {% if guests|length > 0 %}
                 <table class="table table-hover">
                     <thead>
                     <tr>
+                        <th scope="col">Nom & Prénom</th>
                         <th scope="col">Email</th>
-                        <th scope="col">Actif</th>
-                        <th scope="col"></th>
-                        <th scope="col"></th>
+                        <th scope="col">Code</th>
+                        <th scope="col">Code activé</th>
+                        <th scope="col">Nb initial</th>
+                        <th scope="col">Nb final</th>
+                        <th></th>
+                        <th></th>
                     </tr>
                     </thead>
                     <tbody>
-                    {% for user in users %}
+                    {% for guest in guests %}
                         <tr class="table-light">
-                            <th scope="row">{{ user.email }}</th>
+                            <th scope="row">{{ guest.lastName }} {{ guest.firstName }}</th>
+                            <th>{{ guest.email }}</th>
+                            <th>{{ guest.code }}</th>
                             <th>
-                                {% if user.actif %}
+                                {% if guest.codeActif %}
                                     <span class="badge badge-success">
                                         <i class="fas fa-check"></i>
                                     </span>
@@ -41,8 +50,10 @@
                                     </span>
                                 {% endif %}
                             </th>
+                            <th>{{ guest.initialNbPeople }}</th>
+                            <th>{{ guest.finalNbPeople }}</th>
                             <th>
-                                <a href="{{ path('user_edit', {'id': user.id}) }}" class="btn btn-outline-warning">
+                                <a href="{{ path('guest_edit', {'id': guest.id}) }}" class="btn btn-outline-warning">
                                     <i class="fas fa-pen"></i> Modifier
                                 </a>
                             </th>
@@ -63,7 +74,7 @@
                                             </div>
                                             <div class="modal-footer">
                                                 <button type="button" class="button btn-danger">
-                                                    <a href="{{ path('user_delete', {'id': user.id}) }}" style="text-decoration: none; color: white;">Oui</a>
+                                                    <a href="{{ path('guest_delete', {'id': guest.id}) }}" style="text-decoration: none; color: white;">Oui</a>
                                                 </button>
                                                 <button class="button btn-success" data-dismiss="modal">Non</button>
                                             </div>
@@ -77,8 +88,8 @@
                 </table>
             {% else %}
                 <div class="alert alert-dismissible alert-warning">
-                    <h4 class="alert-heading">Aucun utilisateur !</h4>
-                    <p class="mb-0">Il n'y a malheureusement aucun utilisateur</p>
+                    <h4 class="alert-heading">Aucun invité !</h4>
+                    <p class="mb-0">Il n'y a malheureusement aucun invité</p>
                 </div>
             {% endif %}
         </div>
