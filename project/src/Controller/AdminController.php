@@ -2,17 +2,30 @@
 
 namespace App\Controller;
 
+use App\Entity\User;
+use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 class AdminController extends AbstractController
 {
+    private $em;
+
+    public function __construct(EntityManagerInterface $em)
+    {
+        $this->em = $em;
+    }
+
     /**
      * @Route("/admin", name="admin")
      */
-    public function index(): Response
+    public function adminDashboard(): Response
     {
-        return $this->render('admin/index.html.twig');
+        $users = $this->em->getRepository(User::class)->findAll();
+
+        return $this->render('admin/index.html.twig', [
+            'users' => $users
+        ]);
     }
 }

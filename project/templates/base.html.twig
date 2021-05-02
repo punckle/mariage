@@ -21,7 +21,7 @@
             <div class="collapse navbar-collapse" id="navbarColor03">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Accueil</a>
+                        <a class="nav-link" href="{{ path('home') }}">Accueil</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Les mariés</a>
@@ -32,6 +32,27 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#">Répondre à l'invitation</a>
                     </li>
+                </ul>
+                <ul class="navbar-nav ml-auto">
+                    {% if app.user %}
+                        <li class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" id="accountDropdownLink">
+                                {{ app.user.email }}
+                            </a>
+
+                            <div class="dropdown-menu dropdown-menu-right">
+                                {% if "ROLE_ADMIN" in app.user.roles %}
+                                    <a href="{{ path('admin') }}" class="dropdown-item submit">Espace admin</a>
+                                {% endif %}
+                                <a href="{{ path('settings') }}" class="dropdown-item submit">Profil</a>
+                                <a href="{{ path('app_logout') }}" class="dropdown-item submit">Se déconnecter</a>
+                            </div>
+                        </li>
+                    {% else %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ path('app_login') }}" style="text-decoration: none; color: grey;">Se connecter</a>
+                        </li>
+                    {% endif %}
                 </ul>
             </div>
         </nav>

@@ -1,0 +1,67 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Utilisateurs{% endblock %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/admin.css') }}">
+{% endblock %}
+
+{% block body %}
+
+    <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light masthead text-white">
+        <div class="col-md-5 p-lg-5 mx-auto my-5">
+            <h1 class="display-4 font-weight-normal">Les utilisateurs</h1>
+        </div>
+    </div>
+
+    <div class="position-relative overflow-hidden text-center">
+        <div class="p-lg-5 mx-auto my-2">
+            {% if users|length > 0 %}
+                <table class="table table-hover">
+                    <thead>
+                    <tr>
+                        <th scope="col">Email</th>
+                        <th scope="col">Actif</th>
+                        <th scope="col"></th>
+                        <th scope="col"></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for user in users %}
+                        <tr class="table-light">
+                            <th scope="row">{{ user.email }}</th>
+                            <th>
+                                {% if user.actif %}
+                                    <span class="badge badge-success">
+                                        <i class="fas fa-check"></i>
+                                    </span>
+                                {% else %}
+                                    <span class="badge badge-danger">
+                                        <i class="fas fa-times"></i>
+                                    </span>
+                                {% endif %}
+                            </th>
+                            <th>
+                                <a href="{{ path('user_edit', {'id': user.id}) }}" class="btn btn-outline-warning">
+                                    <i class="fas fa-pen"></i> Modifier
+                                </a>
+                            </th>
+                            <th>
+                                <a href="" class="btn btn-outline-danger">
+                                    <i class="fas fa-trash"></i> Supprimer
+                                </a>
+                            </th>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            {% else %}
+                <div class="alert alert-dismissible alert-warning">
+                    <h4 class="alert-heading">Aucun utilisateur !</h4>
+                    <p class="mb-0">Il n'y a malheureusement aucun utilisateur</p>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+
+{% endblock %}

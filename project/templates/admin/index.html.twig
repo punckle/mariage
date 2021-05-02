@@ -1,20 +1,53 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello AdminController!{% endblock %}
+{% block title %}Tableau de bord Admin{% endblock %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/home.css') }}">
+{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+    <header class="masthead text-center text-white d-flex">
+        <div class="container my-auto">
+            <div class="row">
+                <div class="col-lg-10 mx-auto">
+                    <h1 class="text-uppercase">
+                        <strong>Tableau de bord</strong>
+                    </h1>
+                    <br>
+                </div>
+            </div>
+        </div>
+    </header>
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ '/var/www/project/src/Controller/AdminController.php'|file_link(0) }}">src/Controller/AdminController.php</a></code></li>
-        <li>Your template at <code><a href="{{ '/var/www/project/templates/admin/index.html.twig'|file_link(0) }}">templates/admin/index.html.twig</a></code></li>
-    </ul>
-</div>
+    <div class="position-relative overflow-hidden text-center">
+        <div class="p-lg-5 mx-auto my-2">
+            <div class="row ">
+                <div class="col-4">
+                    <div class="card border-secondary mb-3">
+                        <div class="card-body">
+                            <h4 class="card-title"><i class="fas fa-users"></i></h4>
+                            <h4>
+                                <a href="{{ path('user_index') }}" style="text-decoration: none; color: black;">Utilisateurs</a>
+                            </h4>
+                            <span class="badge badge-dark">{{ users|length }} utilisateurs</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="card border-secondary mb-3">
+                        <div class="card-body">
+                            <h4 class="card-title"><i class="fas fa-gift"></i></h4>
+                            <h4>
+                                <a href="" style="text-decoration: none; color: black;">Invités</a>
+                            </h4>
+                            <span class="badge badge-dark">... invités</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
 {% endblock %}
