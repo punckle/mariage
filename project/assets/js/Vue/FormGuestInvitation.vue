@@ -14,7 +14,7 @@
             </div>
           </div>
           <div class="row justify-content-center" v-if="validCode === null">
-            <button class="btn btn-success" v-on:click="sendCode(code)">Valider</button>
+            <button class="btn btn-success contact" v-on:click="sendCode(code)">Valider</button>
           </div>
 
           <div v-if="validCode === false">
@@ -40,10 +40,10 @@
             </div>
             <div class="row">
               <div class="offset-5 col-1 text-center">
-                <button class="btn btn-success mt-2" v-on:click="updateIsPresent(true)">Oui</button>
+                <button class="btn btn-success mt-2 contact" v-on:click="updateIsPresent(true)">Oui</button>
               </div>
               <div class="col-1 text-center">
-                <button class="btn btn-danger mt-2" v-on:click="updateIsPresent(false)">Non</button>
+                <button class="btn btn-danger mt-2 contact" v-on:click="updateIsPresent(false)">Non</button>
               </div>
             </div>
 
@@ -136,7 +136,7 @@
             </div>
           </div>
           <div class="float-right">
-            <button class="btn btn-success" type="submit" v-if="validCode && form.isPresent !== null" v-on:click="saveGuestInvitation">
+            <button class="btn btn-success contact" type="submit" v-if="validCode && form.isPresent !== null" v-on:click="saveGuestInvitation">
               Envoyer les informations
             </button>
           </div>

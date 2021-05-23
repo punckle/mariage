@@ -12,221 +12,15 @@
   <component name="ChangeListManager">
     <list default="true" id="bb627354-86e6-46bb-8483-25c4a7510288" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/Makefile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/project/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/project/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/project/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/config/bundles.php" beforeDir="false" afterPath="$PROJECT_DIR$/project/config/bundles.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/node_modules/jquery/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/project/node_modules/jquery/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/node_modules/select2/CHANGELOG.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/node_modules/select2/LICENSE.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/node_modules/select2/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/node_modules/select2/dist/css/select2.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/node_modules/select2/dist/css/select2.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/node_modules/select2/dist/js/i18n/af.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/node_modules/select2/dist/js/i18n/ar.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/node_modules/select2/dist/js/i18n/az.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/node_modules/select2/dist/js/i18n/bg.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/node_modules/select2/dist/js/i18n/bn.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/node_modules/select2/dist/js/i18n/bs.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/node_modules/select2/dist/js/i18n/build.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/node_modules/select2/dist/js/i18n/ca.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/node_modules/select2/dist/js/i18n/cs.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/node_modules/select2/dist/js/i18n/da.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/node_modules/select2/dist/js/i18n/de.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/node_modules/select2/dist/js/i18n/dsb.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/node_modules/select2/dist/js/i18n/el.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/node_modules/select2/dist/js/i18n/en.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/node_modules/select2/dist/js/i18n/eo.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/node_modules/select2/dist/js/i18n/es.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/node_modules/select2/dist/js/i18n/et.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/node_modules/select2/dist/js/i18n/eu.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/node_modules/select2/dist/js/i18n/fa.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/node_modules/select2/dist/js/i18n/fi.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/node_modules/select2/dist/js/i18n/fr.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/node_modules/select2/dist/js/i18n/gl.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/node_modules/select2/dist/js/i18n/he.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/node_modules/select2/dist/js/i18n/hi.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/node_modules/select2/dist/js/i18n/hr.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/node_modules/select2/dist/js/i18n/hsb.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/node_modules/select2/dist/js/i18n/hu.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/node_modules/select2/dist/js/i18n/hy.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/node_modules/select2/dist/js/i18n/id.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/node_modules/select2/dist/js/i18n/is.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/node_modules/select2/dist/js/i18n/it.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/node_modules/select2/dist/js/i18n/ja.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/node_modules/select2/dist/js/i18n/ka.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/node_modules/select2/dist/js/i18n/km.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/node_modules/select2/dist/js/i18n/ko.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/node_modules/select2/dist/js/i18n/lt.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/node_modules/select2/dist/js/i18n/lv.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/node_modules/select2/dist/js/i18n/mk.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/node_modules/select2/dist/js/i18n/ms.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/node_modules/select2/dist/js/i18n/nb.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/node_modules/select2/dist/js/i18n/ne.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/node_modules/select2/dist/js/i18n/nl.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/node_modules/select2/dist/js/i18n/pa.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/node_modules/select2/dist/js/i18n/pl.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/node_modules/select2/dist/js/i18n/ps.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/node_modules/select2/dist/js/i18n/pt-BR.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/node_modules/select2/dist/js/i18n/pt.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/node_modules/select2/dist/js/i18n/ro.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/node_modules/select2/dist/js/i18n/ru.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/node_modules/select2/dist/js/i18n/sk.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/node_modules/select2/dist/js/i18n/sl.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/node_modules/select2/dist/js/i18n/sq.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/node_modules/select2/dist/js/i18n/sr-Cyrl.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/node_modules/select2/dist/js/i18n/sr.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/node_modules/select2/dist/js/i18n/sv.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/node_modules/select2/dist/js/i18n/te.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/node_modules/select2/dist/js/i18n/th.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/node_modules/select2/dist/js/i18n/tk.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/node_modules/select2/dist/js/i18n/tr.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/node_modules/select2/dist/js/i18n/uk.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/node_modules/select2/dist/js/i18n/vi.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/node_modules/select2/dist/js/i18n/zh-CN.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/node_modules/select2/dist/js/i18n/zh-TW.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/node_modules/select2/dist/js/select2.full.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/node_modules/select2/dist/js/select2.full.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/node_modules/select2/dist/js/select2.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/node_modules/select2/dist/js/select2.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/node_modules/select2/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/node_modules/select2/src/js/banner.end.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/node_modules/select2/src/js/banner.start.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/node_modules/select2/src/js/jquery.mousewheel.shim.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/node_modules/select2/src/js/jquery.select2.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/node_modules/select2/src/js/jquery.shim.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/node_modules/select2/src/js/select2/core.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/node_modules/select2/src/js/select2/data/ajax.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/node_modules/select2/src/js/select2/data/array.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/node_modules/select2/src/js/select2/data/base.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/node_modules/select2/src/js/select2/data/maximumInputLength.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/node_modules/select2/src/js/select2/data/maximumSelectionLength.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/node_modules/select2/src/js/select2/data/minimumInputLength.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/node_modules/select2/src/js/select2/data/select.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/node_modules/select2/src/js/select2/data/tags.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/node_modules/select2/src/js/select2/data/tokenizer.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/node_modules/select2/src/js/select2/defaults.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/node_modules/select2/src/js/select2/diacritics.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/node_modules/select2/src/js/select2/dropdown.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/node_modules/select2/src/js/select2/dropdown/attachBody.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/node_modules/select2/src/js/select2/dropdown/attachContainer.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/node_modules/select2/src/js/select2/dropdown/closeOnSelect.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/node_modules/select2/src/js/select2/dropdown/dropdownCss.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/node_modules/select2/src/js/select2/dropdown/hidePlaceholder.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/node_modules/select2/src/js/select2/dropdown/infiniteScroll.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/node_modules/select2/src/js/select2/dropdown/minimumResultsForSearch.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/node_modules/select2/src/js/select2/dropdown/search.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/node_modules/select2/src/js/select2/dropdown/selectOnClose.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/node_modules/select2/src/js/select2/dropdown/stopPropagation.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/node_modules/select2/src/js/select2/dropdown/tagsSearchHighlight.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/node_modules/select2/src/js/select2/i18n/af.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/node_modules/select2/src/js/select2/i18n/ar.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/node_modules/select2/src/js/select2/i18n/az.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/node_modules/select2/src/js/select2/i18n/bg.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/node_modules/select2/src/js/select2/i18n/bn.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/node_modules/select2/src/js/select2/i18n/bs.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/node_modules/select2/src/js/select2/i18n/ca.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/node_modules/select2/src/js/select2/i18n/cs.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/node_modules/select2/src/js/select2/i18n/da.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/node_modules/select2/src/js/select2/i18n/de.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/node_modules/select2/src/js/select2/i18n/dsb.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/node_modules/select2/src/js/select2/i18n/el.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/node_modules/select2/src/js/select2/i18n/en.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/node_modules/select2/src/js/select2/i18n/eo.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/node_modules/select2/src/js/select2/i18n/es.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/node_modules/select2/src/js/select2/i18n/et.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/node_modules/select2/src/js/select2/i18n/eu.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/node_modules/select2/src/js/select2/i18n/fa.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/node_modules/select2/src/js/select2/i18n/fi.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/node_modules/select2/src/js/select2/i18n/fr.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/node_modules/select2/src/js/select2/i18n/gl.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/node_modules/select2/src/js/select2/i18n/he.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/node_modules/select2/src/js/select2/i18n/hi.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/node_modules/select2/src/js/select2/i18n/hr.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/node_modules/select2/src/js/select2/i18n/hsb.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/node_modules/select2/src/js/select2/i18n/hu.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/node_modules/select2/src/js/select2/i18n/hy.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/node_modules/select2/src/js/select2/i18n/id.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/node_modules/select2/src/js/select2/i18n/is.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/node_modules/select2/src/js/select2/i18n/it.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/node_modules/select2/src/js/select2/i18n/ja.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/node_modules/select2/src/js/select2/i18n/ka.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/node_modules/select2/src/js/select2/i18n/km.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/node_modules/select2/src/js/select2/i18n/ko.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/node_modules/select2/src/js/select2/i18n/lt.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/node_modules/select2/src/js/select2/i18n/lv.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/node_modules/select2/src/js/select2/i18n/mk.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/node_modules/select2/src/js/select2/i18n/ms.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/node_modules/select2/src/js/select2/i18n/nb.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/node_modules/select2/src/js/select2/i18n/ne.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/node_modules/select2/src/js/select2/i18n/nl.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/node_modules/select2/src/js/select2/i18n/pa.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/node_modules/select2/src/js/select2/i18n/pl.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/node_modules/select2/src/js/select2/i18n/ps.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/node_modules/select2/src/js/select2/i18n/pt-BR.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/node_modules/select2/src/js/select2/i18n/pt.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/node_modules/select2/src/js/select2/i18n/ro.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/node_modules/select2/src/js/select2/i18n/ru.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/node_modules/select2/src/js/select2/i18n/sk.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/node_modules/select2/src/js/select2/i18n/sl.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/node_modules/select2/src/js/select2/i18n/sq.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/node_modules/select2/src/js/select2/i18n/sr-Cyrl.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/node_modules/select2/src/js/select2/i18n/sr.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/node_modules/select2/src/js/select2/i18n/sv.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/node_modules/select2/src/js/select2/i18n/te.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/node_modules/select2/src/js/select2/i18n/th.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/node_modules/select2/src/js/select2/i18n/tk.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/node_modules/select2/src/js/select2/i18n/tr.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/node_modules/select2/src/js/select2/i18n/uk.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/node_modules/select2/src/js/select2/i18n/vi.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/node_modules/select2/src/js/select2/i18n/zh-CN.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/node_modules/select2/src/js/select2/i18n/zh-TW.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/node_modules/select2/src/js/select2/keys.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/node_modules/select2/src/js/select2/options.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/node_modules/select2/src/js/select2/results.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/node_modules/select2/src/js/select2/selection/allowClear.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/node_modules/select2/src/js/select2/selection/base.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/node_modules/select2/src/js/select2/selection/clickMask.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/node_modules/select2/src/js/select2/selection/eventRelay.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/node_modules/select2/src/js/select2/selection/multiple.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/node_modules/select2/src/js/select2/selection/placeholder.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/node_modules/select2/src/js/select2/selection/search.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/node_modules/select2/src/js/select2/selection/selectionCss.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/node_modules/select2/src/js/select2/selection/single.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/node_modules/select2/src/js/select2/selection/stopPropagation.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/node_modules/select2/src/js/select2/translation.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/node_modules/select2/src/js/select2/utils.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/node_modules/select2/src/js/wrapper.end.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/node_modules/select2/src/js/wrapper.start.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/node_modules/select2/src/scss/_dropdown.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/node_modules/select2/src/scss/_multiple.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/node_modules/select2/src/scss/_single.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/node_modules/select2/src/scss/core.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/node_modules/select2/src/scss/mixins/_gradients.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/node_modules/select2/src/scss/theme/classic/_defaults.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/node_modules/select2/src/scss/theme/classic/_multiple.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/node_modules/select2/src/scss/theme/classic/_single.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/node_modules/select2/src/scss/theme/classic/layout.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/node_modules/select2/src/scss/theme/default/_multiple.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/node_modules/select2/src/scss/theme/default/_single.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/node_modules/select2/src/scss/theme/default/layout.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/assets/js/Vue/FormGuestInvitation.vue" beforeDir="false" afterPath="$PROJECT_DIR$/project/assets/js/Vue/FormGuestInvitation.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/project/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/public/build/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/project/public/build/app.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/project/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/public/assets/css/base.css" beforeDir="false" afterPath="$PROJECT_DIR$/project/public/assets/css/base.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/public/assets/css/home.css" beforeDir="false" afterPath="$PROJECT_DIR$/project/public/assets/css/home.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project/public/build/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/project/public/build/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/public/build/entrypoints.json" beforeDir="false" afterPath="$PROJECT_DIR$/project/public/build/entrypoints.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/public/build/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/project/public/build/manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/public/build/runtime.js" beforeDir="false" afterPath="$PROJECT_DIR$/project/public/build/runtime.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/public/build/vendors-node_modules_symfony_stimulus-bridge_dist_index_js-node_modules_core-js_modules_es_ob-7db861.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/src/Controller/GuestController.php" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/Controller/GuestController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/src/Entity/Guest.php" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/Entity/Guest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/src/Entity/GuestPlusOne.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/src/Entity/PlusOne.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/src/Repository/GuestPlusOneRepository.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/src/Repository/PlusOneRepository.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/project/symfony.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/templates/security/login.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/project/templates/security/login.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/project/templates/base.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/templates/guest/form_guest_invitation.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/project/templates/guest/form_guest_invitation.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/templates/home/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/project/templates/home/index.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -250,6 +44,7 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/project/assets/js/app.js" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/project/webpack.config.js" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/project/package.json" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/project/templates/base.html.twig" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/project/assets/app.js" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/project/config/packages/assets.yaml" root0="SKIP_INSPECTION" />
@@ -260,7 +55,9 @@
     <setting file="file://$PROJECT_DIR$/project/assets/js/Vue/FormGuestInvitation.vue" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/project/src/Form/GuestFormInvitationType.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/project/assets/styles/app.scss" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/project/src/Entity/GuestPlusOne.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Makefile" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/project/src/Entity/Guest.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/project/src/Controller/GuestController.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectId" id="1rw1ds9yti57ybpLYkRuZfpj3Bc" />
@@ -271,7 +68,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../awesome-todo" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/project/public/assets/images" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="configurable.group.language" />
     <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
@@ -279,8 +76,9 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/project/node_modules" />
       <recent name="$PROJECT_DIR$/project/public/assets/images" />
+      <recent name="$PROJECT_DIR$/project/public/assets/css" />
+      <recent name="$PROJECT_DIR$/project/node_modules" />
       <recent name="$PROJECT_DIR$/project/src/Form" />
       <recent name="$PROJECT_DIR$/project/src/Entity" />
     </key>
@@ -305,7 +103,7 @@
       <workItem from="1621755583633" duration="77000" />
       <workItem from="1621755674659" duration="778000" />
       <workItem from="1621756461657" duration="70000" />
-      <workItem from="1621756541466" duration="9752000" />
+      <workItem from="1621756541466" duration="16109000" />
     </task>
     <servers />
   </component>

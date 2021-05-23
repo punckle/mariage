@@ -3,10 +3,10 @@ body {
 }
 @media only screen and (max-device-width:980px) {
     body {
-        font-size: 1.5rem;
+        font-size: 2rem;
         text-align: justify;
     }
-    nav, .navbar-brand {
+    nav, .navbar-brand, .nav-item {
         font-size: 2rem;
     }
     .navbar-toggler {
@@ -14,5 +14,8 @@ body {
     }
     h4, h5, h6, .contact, .mentions, .submit {
         font-size: 1.75rem;
+    }
+    .alert {
+        font-size: 2rem;
     }
 }
