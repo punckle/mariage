@@ -3,7 +3,7 @@
 {% block title %}Invités{% endblock %}
 
 {% block stylesheets %}
-    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/home.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/admin.css') }}">
 {% endblock %}
 
 {% block body %}
@@ -29,6 +29,7 @@
                         <th scope="col">Code activé</th>
                         <th scope="col">Nb initial</th>
                         <th scope="col">Nb final</th>
+                        <th scope="col">Vient</th>
                         <th></th>
                         <th></th>
                     </tr>
@@ -51,7 +52,22 @@
                                 {% endif %}
                             </th>
                             <th>{{ guest.initialNbPeople }}</th>
-                            <th>{{ guest.finalNbPeople }}</th>
+                            <th>
+                                <a href="{{ path('show_plus_ones', {'id': guest.id}) }}" style="text-decoration: none; color: black">
+                                    {{ guest.finalNbPeople }}
+                                </a>
+                            </th>
+                            <th>
+                                {% if guest.come %}
+                                    <span class="badge badge-success">
+                                        <i class="fas fa-check"></i>
+                                    </span>
+                                {% else %}
+                                    <span class="badge badge-danger">
+                                        <i class="fas fa-times"></i>
+                                    </span>
+                                {% endif %}
+                            </th>
                             <th>
                                 <a href="{{ path('guest_edit', {'id': guest.id}) }}" class="btn btn-outline-warning">
                                     <i class="fas fa-pen"></i> Modifier

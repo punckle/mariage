@@ -1,0 +1,76 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Invités {{ guest.firstName }} {{ guest.lastName }}{% endblock %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/admin.css') }}">
+{% endblock %}
+
+{% block body %}
+
+    <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light masthead text-white">
+        <div class="col-md-5 p-lg-5 mx-auto my-5">
+            <h1 class="display-4 font-weight-normal">{{ guest.firstName }} {{ guest.lastName }}</h1>
+        </div>
+    </div>
+
+    <div class="position-relative overflow-hidden text-center">
+        <div class="p-lg-5 mx-auto my-2">
+            <a href="{{ path('plus_one_new', {'id': guest.id}) }}" class="btn btn-primary">Ajouter des invités</a>
+        </div>
+        <div class="p-lg-5 mx-auto my-2">
+            {% if plusOnes|length > 0 %}
+                <table class="table table-hover">
+                    <thead>
+                    <tr>
+                        <th scope="col">Nom & Prénom</th>
+                        <th scope="col">Cocktail</th>
+                        <th scope="col">Dîner</th>
+                        <th scope="col">Commentaire</th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for plusOne in plusOnes %}
+                        <tr class="table-light">
+                            <th scope="row">{{ plusOne.lastName }} {{ plusOne.firstName }}</th>
+                            <th>
+                                {% if plusOne.apero %}
+                                    <span class="badge badge-success">
+                                        <i class="fas fa-check"></i>
+                                    </span>
+                                {% else %}
+                                    <span class="badge badge-danger">
+                                        <i class="fas fa-times"></i>
+                                    </span>
+                                {% endif %}
+                            </th>
+                            <th>
+                                {% if plusOne.dinner %}
+                                    <span class="badge badge-success">
+                                        <i class="fas fa-check"></i>
+                                    </span>
+                                {% else %}
+                                    <span class="badge badge-danger">
+                                        <i class="fas fa-times"></i>
+                                    </span>
+                                {% endif %}
+                            </th>
+                            <th>{{ plusOne.comment }}</th>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            {% else %}
+                <div class="alert alert-dismissible alert-warning">
+                    <h4 class="alert-heading">Aucun invité !</h4>
+                    <p class="mb-0">Il n'y a malheureusement aucun invité</p>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+
+{% endblock %}

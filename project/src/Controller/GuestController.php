@@ -168,4 +168,49 @@ class GuestController extends AbstractController
         }
         $this->em->flush();
     }
+
+    /**
+     * @Route("invite/plus_ones/{id}", name="show_plus_ones")
+     */
+    public function showPlusOnes(Guest$guest)
+    {
+        $plusOnes = $this->em->getRepository(GuestPlusOne::class)->findBy(['guest' => $guest->getId()]);
+
+        return $this->render('guest/plus_ones.html.twig', [
+            'guest' => $guest,
+            'plusOnes' => $plusOnes
+        ]);
+    }
+
+    /**
+     * @Route("invite/new/plus_one/{id}", name="plus_one_new")
+     */
+    public function newPlusOne(Guest $guest, Request $request)
+    {
+        $plusOne = new GuestPlusOne();
+        $form = $this->createForm(GuestFormInvitationType::class, $plusOne);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $plusOne->setGuest($guest);
+            $guest->setFinalNbPeople($guest->getFinalNbPeople() + 1);
+            $this->em->persist($guest);
+            $this->em->persist($plusOne);
+            $this->em->flush();
+
+            $this->addFlash(
+                'success',
+                'L\'invité a été créé avec succès'
+            );
+
+            return $this->redirectToRoute('show_plus_ones', [
+                'id' => $guest->getId()
+            ]);
+        }
+
+        return $this->render('guest/new_plus_one.html.twig', [
+            'form' => $form->createView(),
+            'guest' => $guest
+        ]);
+    }
 }
