@@ -4,6 +4,7 @@ namespace App\Form;
 
 use App\Entity\Guest;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
@@ -49,6 +50,17 @@ class GuestType extends AbstractType
                 'label' => false,
                 'attr' => [
                     'placeholder' => 'Code'
+                ]
+            ])
+            ->add('isInvitedApero', CheckboxType::class, [
+                'required' => false,
+                'attr' => [
+                    'placeholder' => 'Apéro'
+                ]
+            ])->add('isInvitedDinner', CheckboxType::class, [
+                'required' => false,
+                'attr' => [
+                    'placeholder' => 'Dîner'
                 ]
             ])
             ->add('save', SubmitType::class, ['label' => 'Ajouter'])

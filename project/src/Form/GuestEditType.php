@@ -56,8 +56,20 @@ class GuestEditType extends AbstractType
                 ]
             ])
             ->add('codeActif', CheckboxType::class, [
+                'required' => false,
                 'attr' => [
                     'placeholder' => 'Code actif'
+                ]
+            ])
+            ->add('isInvitedApero', CheckboxType::class, [
+                'required' => false,
+                'attr' => [
+                    'placeholder' => 'Apéro'
+                ]
+            ])->add('isInvitedDinner', CheckboxType::class, [
+                'required' => false,
+                'attr' => [
+                    'placeholder' => 'Dîner'
                 ]
             ])
             ->add('save', SubmitType::class, ['label' => 'Modifier'])

@@ -105,7 +105,7 @@ class GuestController extends AbstractController
         $data = json_decode($request->getContent(), true);
         $guest = $this->em->getRepository(Guest::class)->findOneBy(['code' => $data['code']]);
 
-        if (!$guest->getCodeActif()) {
+        if ($guest && !$guest->getCodeActif()) {
             return new JsonResponse([
                 'status' => 'ok',
                 'guest' => $guest->toJson()
