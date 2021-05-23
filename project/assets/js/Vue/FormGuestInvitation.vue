@@ -89,9 +89,9 @@
                 <div class="card my-3">
                   <div class="card-body">
 
-                    <div class="card-title">
+                    <h5 class="card-title">
                       Invité n°{{ index + 1 }}
-                    </div>
+                    </h5>
 
                     <div class="row justify-content-around" v-if="number && number > 0">
                       <div class="col my-2">
@@ -101,21 +101,26 @@
                         <input v-model="form.guests[index].lastName" type="text" placeholder="Nom">
                       </div>
                       <div class="col my-2">
-                <textarea
-                    v-model="form.guests[index].comment"
-                    cols="50"
-                    rows="1"
-                    placeholder="Commentaire (allergies, intolérances, etc.)"/>
+                        <textarea
+                            v-model="form.guests[index].comment"
+                            cols="50"
+                            rows="1"
+                            placeholder="Commentaire (allergies, intolérances, etc.)"/>
+                      </div>
+                      <div class="col my-2 contact">
+                        <button v-if="form.guests[index].kid === true" class="btn btn-success" v-on:click="updateKid(form.guests[index])"><i class="fas fa-child"></i> Enfant</button>
+                        <button v-if="form.guests[index].kid === false" class="btn btn-light" v-on:click="updateKid(form.guests[index])"><i class="fas fa-child"></i> Enfant</button>
                       </div>
                     </div>
-                    <div v-if="number && number > 0 && guest.isInvitedApero">
-                      <input type="checkbox" v-model="form.guests[index].apero" :id="index + 1 + 'apero'" name="apero">
-                      <label :for="index + 1 + 'apero'">Cocktail</label>
+
+
+                    <div class="my-2 contact" v-if="number && number > 0 && guest.isInvitedApero">
+                      <button v-if="form.guests[index].apero === true" class="btn btn-success" v-on:click="updateApero(form.guests[index])"><i class="fas fa-cocktail"></i> Cocktail</button>
+                      <button v-if="form.guests[index].apero === false" class="btn btn-light" v-on:click="updateApero(form.guests[index])"><i class="fas fa-cocktail"></i> Coktail</button>
                     </div>
-                    <div v-if="number && number > 0 && guest.isInvitedApero && guest.isInvitedDinner">
-                      <input type="checkbox" v-model="form.guests[index].dinner" :id="index + 1 + 'dinner'"
-                             name="dinner">
-                      <label :for="index + 1 + 'dinner'">Dîner</label>
+                    <div class="my-2 contact" v-if="number && number > 0 && guest.isInvitedApero && guest.isInvitedDinner">
+                      <button v-if="form.guests[index].dinner === true" class="btn btn-success" v-on:click="updateDinner(form.guests[index])"><i class="fas fa-utensils"></i> Dîner</button>
+                      <button v-if="form.guests[index].dinner === false" class="btn btn-light" v-on:click="updateDinner(form.guests[index])"><i class="fas fa-utensils"></i> Dîner</button>
                     </div>
                   </div>
                 </div>
@@ -172,6 +177,15 @@ export default {
     updateIsPresent(val) {
       this.form.isPresent = val
     },
+    updateKid(guest) {
+      guest.kid = !guest.kid
+    },
+    updateApero(guest) {
+      guest.apero = !guest.apero
+    },
+    updateDinner(guest) {
+      guest.dinner = !guest.dinner
+    },
     sendCode(code) {
       this.$http.post('/guest/code_invitation', {
         code: this.code,
@@ -206,7 +220,7 @@ export default {
       if (val && val.length > 0) {
         this.form.number = val
         for (let i = 0; i < val; i++) {
-          this.form.guests.push({ 'firstName': '', 'lastName': '', 'comment': '', 'apero': false, 'dinner': false })
+          this.form.guests.push({ 'firstName': '', 'lastName': '', 'comment': '', 'apero': false, 'dinner': false, 'kid': false })
         }
       }
       if (val.length === 0) {

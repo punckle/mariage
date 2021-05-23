@@ -24,6 +24,7 @@
                     <thead>
                     <tr>
                         <th scope="col">Nom & Prénom</th>
+                        <th scope="col">Enfant</th>
                         <th scope="col">Cocktail</th>
                         <th scope="col">Dîner</th>
                         <th scope="col">Commentaire</th>
@@ -35,6 +36,17 @@
                     {% for plusOne in plusOnes %}
                         <tr class="table-light">
                             <th scope="row">{{ plusOne.lastName }} {{ plusOne.firstName }}</th>
+                            <th>
+                                {% if plusOne.kid %}
+                                    <span class="badge badge-success">
+                                        <i class="fas fa-check"></i>
+                                    </span>
+                                {% else %}
+                                    <span class="badge badge-danger">
+                                        <i class="fas fa-times"></i>
+                                    </span>
+                                {% endif %}
+                            </th>
                             <th>
                                 {% if plusOne.apero %}
                                     <span class="badge badge-success">
@@ -58,8 +70,36 @@
                                 {% endif %}
                             </th>
                             <th>{{ plusOne.comment }}</th>
-                            <th></th>
-                            <th></th>
+                            <th>
+                                <a href="{{ path('edit_plus_one', {'id': plusOne.id}) }}" class="btn btn-outline-warning">
+                                    <i class="fas fa-pen"></i> Modifier
+                                </a>
+                            </th>
+                            <th>
+                                <button type="button" class="btn btn-outline-danger" data-toggle="modal" data-target="#myModal">
+                                    <i class="fas fa-trash-alt"></i> Supprimer
+                                </button>
+                                <!-- Modal -->
+                                <div id="myModal" class="modal fade" role="dialog">
+                                    <div class="modal-dialog">
+                                        <!-- Modal content-->
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <h4>Êtes-vous certain(e) de vouloir supprimer cet invité ?</h4>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="button btn-danger">
+                                                    <a href="{{ path('delete_plus_one', {'id': plusOne.id}) }}" style="text-decoration: none; color: white;">Oui</a>
+                                                </button>
+                                                <button class="button btn-success" data-dismiss="modal">Non</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </th>
                         </tr>
                     {% endfor %}
                     </tbody>

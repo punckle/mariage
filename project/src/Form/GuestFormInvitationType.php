@@ -30,6 +30,10 @@ class GuestFormInvitationType extends AbstractType
                     'placeholder' => 'Nom(s) de famille'
                 ]
             ])
+            ->add('kid', CheckboxType::class, [
+                'required' => false,
+                'label' => 'Enfant'
+            ])
             ->add('apero', CheckboxType::class, [
                 'required' => false,
                 'label' => 'Cocktail'

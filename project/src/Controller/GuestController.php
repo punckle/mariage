@@ -164,6 +164,7 @@ class GuestController extends AbstractController
             $plusOne->setDinner($dataPlusOne['dinner']);
             $plusOne->setComment($dataPlusOne['comment']);
             $plusOne->setGuest($guest);
+            $plusOne->setKid($dataPlusOne['kid']);
             $this->em->persist($plusOne);
         }
         $this->em->flush();
@@ -177,6 +178,7 @@ class GuestController extends AbstractController
         $plusOnes = $this->em->getRepository(GuestPlusOne::class)->findBy(['guest' => $guest->getId()]);
 
         return $this->render('guest/plus_ones.html.twig', [
+            'guest' => $guest,
             'guest' => $guest,
             'plusOnes' => $plusOnes
         ]);
@@ -211,6 +213,43 @@ class GuestController extends AbstractController
         return $this->render('guest/new_plus_one.html.twig', [
             'form' => $form->createView(),
             'guest' => $guest
+        ]);
+    }
+
+    /**
+     * @Route("edit/plus_one/{id}", name="edit_plus_one")
+     */
+    public function editPlusOne(GuestPlusOne $guestPlusOne, Request $request)
+    {
+        $form = $this->createForm(GuestFormInvitationType::class, $guestPlusOne);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $this->getDoctrine()->getManager()->flush();
+
+            return $this->redirectToRoute('show_plus_ones', [
+                'id' => $guestPlusOne->getGuest()->getId()
+            ]);
+        }
+
+        return $this->render('guest/edit_plus_one.html.twig', [
+            'guestPlusOne' => $guestPlusOne,
+            'guest' => $guestPlusOne->getGuest(),
+            'form' => $form->createView(),
+        ]);
+    }
+
+    /**
+     * @Route("delete/plus_one/{id}", name="delete_plus_one")
+     */
+    public function deletePlusOne(GuestPlusOne $guestPlusOne)
+    {
+        $id = $guestPlusOne->getGuest()->getId();
+        $this->em->remove($guestPlusOne);
+        $this->em->flush();
+
+        return $this->redirectToRoute('show_plus_ones', [
+            'id' => $id
         ]);
     }
 }

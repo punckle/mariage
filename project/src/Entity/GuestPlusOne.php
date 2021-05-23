@@ -48,6 +48,11 @@ class GuestPlusOne
      */
     private $comment;
 
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    private $kid = false;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -121,6 +126,18 @@ class GuestPlusOne
     public function setComment(?string $comment): self
     {
         $this->comment = $comment;
+
+        return $this;
+    }
+
+    public function getKid(): ?bool
+    {
+        return $this->kid;
+    }
+
+    public function setKid(bool $kid): self
+    {
+        $this->kid = $kid;
 
         return $this;
     }
