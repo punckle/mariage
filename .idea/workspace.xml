@@ -12,14 +12,7 @@
   <component name="ChangeListManager">
     <list default="true" id="bb627354-86e6-46bb-8483-25c4a7510288" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/assets/js/Vue/FormGuestInvitation.vue" beforeDir="false" afterPath="$PROJECT_DIR$/project/assets/js/Vue/FormGuestInvitation.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/project/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/project/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/public/assets/css/base.css" beforeDir="false" afterPath="$PROJECT_DIR$/project/public/assets/css/base.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project/public/assets/css/home.css" beforeDir="false" afterPath="$PROJECT_DIR$/project/public/assets/css/home.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/public/build/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/project/public/build/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/project/templates/base.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/templates/guest/form_guest_invitation.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/project/templates/guest/form_guest_invitation.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project/templates/home/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/project/templates/home/index.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -61,6 +54,9 @@
     <setting file="file://$PROJECT_DIR$/project/src/Controller/GuestController.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectId" id="1rw1ds9yti57ybpLYkRuZfpj3Bc" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -103,7 +99,7 @@
       <workItem from="1621755583633" duration="77000" />
       <workItem from="1621755674659" duration="778000" />
       <workItem from="1621756461657" duration="70000" />
-      <workItem from="1621756541466" duration="16109000" />
+      <workItem from="1621756541466" duration="18491000" />
     </task>
     <servers />
   </component>

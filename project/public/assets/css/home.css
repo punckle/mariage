@@ -1,11 +1,7 @@
 div.masthead {
     padding-top: 10rem;
     padding-bottom: calc(10rem - 26px);
-    background-image: url("/assets/images/wedding2.jpg");
+    background-image: url("/assets/images/manon_xavier.png");
     background-position: center center;
     background-size: cover;
-}
-
-.text-white {
-    text-shadow: 3px 3px 3px rgba(0,0,0,0.5);
 }

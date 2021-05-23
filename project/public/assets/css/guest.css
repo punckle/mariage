@@ -1,7 +1,7 @@
 div.masthead {
     padding-top: 10rem;
     padding-bottom: calc(10rem - 26px);
-    background-image: url("/assets/images/fete.jpg");
+    background-image: url("/assets/images/invitation.png");
     background-position: center center;
     background-size: cover;
 }

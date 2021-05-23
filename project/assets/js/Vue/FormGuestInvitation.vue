@@ -2,19 +2,19 @@
   <div id="app">
     <div class="position-relative overflow-hidden text-center">
       <div class="p-lg-5 mx-auto my-2">
-        <div class="row ">
-          <div class="col text-center mb-2">
+        <div class="row">
+          <div class="col text-center mb-4">
             Vous êtes invité au mariage de Manon & Xavier ? <br><br>
             Indiquez le code figurant sur votre invitation puis répondez aux questions posées <i class="far fa-smile"></i>
           </div>
         </div>
           <div class="row" v-if="validCode === null">
-            <div class="col text-center my-2">
+            <div class="col text-center my-4">
               <input v-model="code" type="text">
             </div>
           </div>
           <div class="row justify-content-center" v-if="validCode === null">
-            <button class="btn btn-success contact" v-on:click="sendCode(code)">Valider</button>
+            <button class="btn btn-success contact my-3" v-on:click="sendCode(code)">Valider</button>
           </div>
 
           <div v-if="validCode === false">
@@ -95,7 +95,7 @@
 
                     <div class="row justify-content-around" v-if="number && number > 0">
                       <div class="col my-2">
-                        <input v-model="form.guests[index].firstName" type="text" placeholder="Prénom">
+                        <input v-model="form.guests[index].firstName" type="text" placeholder="Prénom" required>
                       </div>
                       <div class="col my-2">
                         <input v-model="form.guests[index].lastName" type="text" placeholder="Nom">
@@ -135,6 +135,9 @@
               </div>
             </div>
           </div>
+        <div class="alert alert-warning" v-if="validCode && form.isPresent !== null && errors.length > 0">
+          Merci d'indiquer au moins un prénom à chaque invité.
+        </div>
           <div class="float-right">
             <button class="btn btn-success contact" type="submit" v-if="validCode && form.isPresent !== null" v-on:click="saveGuestInvitation">
               Envoyer les informations
@@ -161,7 +164,8 @@ export default {
         number: null,
         message: '',
         guests: []
-      }
+      },
+      errors: []
     }
   },
   methods: {
@@ -181,14 +185,20 @@ export default {
       })
     },
     saveGuestInvitation() {
-      this.$http.post('/guest/save_invitation', {
-        form: this.form,
-        guest: this.guest
-      }).then((res) => {
-        if (res.data.status === 'ok') {
-          window.location.replace(res.data.path)
-        }
+      this.form.guests.forEach((invite) => {
+        if (invite.firstName) this.errors = []
+        if (!invite.firstName) this.errors.push("Merci d'indiquer des prénoms")
       })
+      if (this.errors.length === 0) {
+        this.$http.post('/guest/save_invitation', {
+          form: this.form,
+          guest: this.guest
+        }).then((res) => {
+          if (res.data.status === 'ok') {
+            window.location.replace(res.data.path)
+          }
+        })
+      }
     }
   },
   watch: {
