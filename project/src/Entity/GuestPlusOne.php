@@ -18,20 +18,87 @@ class GuestPlusOne
     private $id;
 
     /**
-     * @ORM\OneToOne(targetEntity=Guest::class, cascade={"persist", "remove"})
+     * @ORM\Column(type="string", length=255)
+     */
+    private $firstName;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $lastName;
+
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    private $apero = false;
+
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    private $dinner = false;
+
+    /**
+     * @ORM\ManyToOne(targetEntity=Guest::class, inversedBy="guestPlusOnes")
      * @ORM\JoinColumn(nullable=false)
      */
     private $guest;
 
     /**
-     * @ORM\OneToOne(targetEntity=PlusOne::class, cascade={"persist", "remove"})
-     * @ORM\JoinColumn(nullable=false)
+     * @ORM\Column(type="text", nullable=true)
      */
-    private $plusOne;
+    private $comment;
 
     public function getId(): ?int
     {
         return $this->id;
+    }
+
+    public function getFirstName(): ?string
+    {
+        return $this->firstName;
+    }
+
+    public function setFirstName(string $firstName): self
+    {
+        $this->firstName = $firstName;
+
+        return $this;
+    }
+
+    public function getLastName(): ?string
+    {
+        return $this->lastName;
+    }
+
+    public function setLastName(?string $lastName): self
+    {
+        $this->lastName = $lastName;
+
+        return $this;
+    }
+
+    public function getApero(): ?bool
+    {
+        return $this->apero;
+    }
+
+    public function setApero(bool $apero): self
+    {
+        $this->apero = $apero;
+
+        return $this;
+    }
+
+    public function getDinner(): ?bool
+    {
+        return $this->dinner;
+    }
+
+    public function setDinner(bool $dinner): self
+    {
+        $this->dinner = $dinner;
+
+        return $this;
     }
 
     public function getGuest(): ?Guest
@@ -39,21 +106,21 @@ class GuestPlusOne
         return $this->guest;
     }
 
-    public function setGuest(Guest $guest): self
+    public function setGuest(?Guest $guest): self
     {
         $this->guest = $guest;
 
         return $this;
     }
 
-    public function getPlusOne(): ?PlusOne
+    public function getComment(): ?string
     {
-        return $this->plusOne;
+        return $this->comment;
     }
 
-    public function setPlusOne(PlusOne $plusOne): self
+    public function setComment(?string $comment): self
     {
-        $this->plusOne = $plusOne;
+        $this->comment = $comment;
 
         return $this;
     }

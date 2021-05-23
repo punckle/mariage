@@ -3,13 +3,16 @@
 namespace App\Controller;
 
 use App\Entity\Guest;
+use App\Entity\GuestPlusOne;
 use App\Form\GuestCodeType;
 use App\Form\GuestEditType;
+use App\Form\GuestFormInvitationType;
 use App\Form\GuestType;
 use App\Repository\GuestRepository;
 use App\Repository\UserRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -89,17 +92,80 @@ class GuestController extends AbstractController
     /**
      * @Route("/invitation", name="guest")
      */
-    public function invitation(Request $request): Response
+    public function guestFormInvitation(Request $request)
     {
-        $form = $this->createForm(GuestCodeType::class);
-        $form->handleRequest($request);
+        return $this->render('guest/form_guest_invitation.html.twig');
+    }
 
-        if ($form->isSubmitted() && $form->isValid()) {
-            $data = $form->getData();
+    /**
+     * @Route("/guest/code_invitation", name="gues_code_invitation", methods={"POST"})
+     */
+    public function getCodeGuest(Request $request)
+    {
+        $data = json_decode($request->getContent(), true);
+        $guest = $this->em->getRepository(Guest::class)->findOneBy(['code' => $data['code']]);
+
+        if (!$guest->getCodeActif()) {
+            return new JsonResponse([
+                'status' => 'ok',
+                'guest' => $guest->toJson()
+            ]);
+        } else {
+            return new JsonResponse([
+                'status' => 'ko'
+            ]);
+        }
+    }
+
+    /**
+     * @Route("/guest/save_invitation", name="save_invitation_form")
+     */
+    public function saveInvitationForm(Request $request)
+    {
+        $form = json_decode($request->getContent(), true);
+        $guest = $this->em->getRepository(Guest::class)->findOneBy(['id' => $form['guest']['id']]);
+        $data = $form['form'];
+
+        $guest->setCome($data['isPresent']);
+        $guest->setCodeActif(true);
+
+        if ($data['message']) {
+            $guest->setMessage($data['message']);
         }
 
-        return $this->render('guest/invitation.html.twig', [
-            'form' => $form->createView()
+        $this->em->persist($guest);
+
+        if ($data['number'] > 0) {
+            $guest->setFinalNbPeople($data['number']);
+            $this->createPlusOnes($data, $guest);
+        } else {
+            $guest->setFinalNbPeople(0);
+        }
+        $this->em->flush();
+
+        $this->addFlash(
+            'success',
+            'Merci pour votre réponse. Les informations ont bien été prises en compte. Nous avons hâte de fêter ça avec vous !'
+        );
+
+        return new JsonResponse([
+            'status' => 'ok',
+            'path' => $this->generateUrl('home')
         ]);
+    }
+
+    private function createPlusOnes($data, Guest $guest)
+    {
+        foreach ($data['guests'] as $dataPlusOne) {
+            $plusOne = new GuestPlusOne();
+            $plusOne->setFirstName($dataPlusOne['firstName']);
+            $plusOne->setLastName($dataPlusOne['lastName']);
+            $plusOne->setApero($dataPlusOne['apero']);
+            $plusOne->setDinner($dataPlusOne['dinner']);
+            $plusOne->setComment($dataPlusOne['comment']);
+            $plusOne->setGuest($guest);
+            $this->em->persist($plusOne);
+        }
+        $this->em->flush();
     }
 }

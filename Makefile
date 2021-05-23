@@ -11,4 +11,4 @@ stop:
 	docker-compose stop
 
 wp-watch: #WebPack Encore Watch
-	./node_modules/.bin/encore dev --watch
+	node_modules/.bin/encore dev --watch

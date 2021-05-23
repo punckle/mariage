@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\GuestRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 
@@ -53,6 +55,47 @@ class Guest
      * @ORM\Column(type="boolean")
      */
     private $codeActif;
+
+    /**
+     * @ORM\Column(type="boolean", nullable=true)
+     */
+    private $come;
+
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    private $isInvitedApero = true;
+
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    private $isInvitedDinner = false;
+
+    /**
+     * @ORM\OneToMany(targetEntity=GuestPlusOne::class, mappedBy="guest")
+     */
+    private $guestPlusOnes;
+
+    /**
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private $message;
+
+    public function __construct()
+    {
+        $this->guestPlusOnes = new ArrayCollection();
+    }
+
+    public function toJson(): array
+    {
+        $guest = [
+            'id' => $this->id,
+            'isInvitedApero' => $this->isInvitedApero,
+            'isInvitedDinner' => $this->isInvitedDinner
+        ];
+
+        return $guest;
+    }
 
     public function getId(): ?int
     {
@@ -139,6 +182,84 @@ class Guest
     public function setCodeActif(bool $codeActif): self
     {
         $this->codeActif = $codeActif;
+
+        return $this;
+    }
+
+    public function getCome(): ?bool
+    {
+        return $this->come;
+    }
+
+    public function setCome(?bool $come): self
+    {
+        $this->come = $come;
+
+        return $this;
+    }
+
+    public function getIsInvitedApero(): ?bool
+    {
+        return $this->isInvitedApero;
+    }
+
+    public function setIsInvitedApero(bool $isInvitedApero): self
+    {
+        $this->isInvitedApero = $isInvitedApero;
+
+        return $this;
+    }
+
+    public function getIsInvitedDinner(): ?bool
+    {
+        return $this->isInvitedDinner;
+    }
+
+    public function setIsInvitedDinner(bool $isInvitedDinner): self
+    {
+        $this->isInvitedDinner = $isInvitedDinner;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|GuestPlusOne[]
+     */
+    public function getGuestPlusOnes(): Collection
+    {
+        return $this->guestPlusOnes;
+    }
+
+    public function addGuestPlusOne(GuestPlusOne $guestPlusOne): self
+    {
+        if (!$this->guestPlusOnes->contains($guestPlusOne)) {
+            $this->guestPlusOnes[] = $guestPlusOne;
+            $guestPlusOne->setGuest($this);
+        }
+
+        return $this;
+    }
+
+    public function removeGuestPlusOne(GuestPlusOne $guestPlusOne): self
+    {
+        if ($this->guestPlusOnes->removeElement($guestPlusOne)) {
+            // set the owning side to null (unless already changed)
+            if ($guestPlusOne->getGuest() === $this) {
+                $guestPlusOne->setGuest(null);
+            }
+        }
+
+        return $this;
+    }
+
+    public function getMessage(): ?string
+    {
+        return $this->message;
+    }
+
+    public function setMessage(?string $message): self
+    {
+        $this->message = $message;
 
         return $this;
     }
