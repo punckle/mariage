@@ -33,7 +33,18 @@
                         <div class="card-body">
                             <h4 class="card-title"><i class="fas fa-gift"></i></h4>
                             <h4>
-                                <a href="{{ path('guest_index') }}" style="text-decoration: none; color: black;">Invités</a>
+                                <a href="{{ path('guest_index') }}" style="text-decoration: none; color: black;"> Groupes-Invités</a>
+                            </h4>
+                            <span class="badge badge-dark">{{ guestsGroupes|length}} groupes-invités</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="card border-secondary mb-3">
+                        <div class="card-body">
+                            <h4 class="card-title"><i class="fas fa-gift"></i></h4>
+                            <h4>
+                                <a href="#" style="text-decoration: none; color: black;"> Invités</a>
                             </h4>
                             <span class="badge badge-dark">{{ guests|length}} invités</span>
                         </div>

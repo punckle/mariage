@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Guest;
+use App\Entity\GuestPlusOne;
 use App\Entity\User;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -24,10 +25,12 @@ class AdminController extends AbstractController
     public function adminDashboard(): Response
     {
         $users = $this->em->getRepository(User::class)->findAll();
-        $guests = $this->em->getRepository(Guest::class)->findAll();
+        $guestsGroupes = $this->em->getRepository(Guest::class)->findAll();
+        $guests = $this->em->getRepository(GuestPlusOne::class)->findAll();
 
         return $this->render('admin/index.html.twig', [
             'users' => $users,
+            'guestsGroupes' => $guestsGroupes,
             'guests' => $guests
         ]);
     }

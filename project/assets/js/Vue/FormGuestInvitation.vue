@@ -67,7 +67,7 @@
             <div v-if="form.isPresent === true">
               <div class="row">
                 <div class="col text-center my-2">
-                  Combien serez-vous ?
+                  Combien serez-vous (en vous incluant) ?
                 </div>
               </div>
               <div class="row">
@@ -82,7 +82,7 @@
             <div v-if="form.isPresent === true && form.number !== null">
               <div class="row">
                 <div class="col text-center my-2">
-                  Merci d'indiquer les noms et prénoms des personnes qui vous accompagneront
+                  Merci de répondre au formulaire pour chaque personne (même vous !)
                 </div>
               </div>
               <div v-for="(value, index) in form.guests" :key="index">
@@ -93,34 +93,54 @@
                       Invité n°{{ index + 1 }}
                     </h5>
 
-                    <div class="row justify-content-around" v-if="number && number > 0">
-                      <div class="col my-2">
+                    <div class="row" v-if="number && number > 0">
+                      <div class="col-12 my-2 contact">
                         <input v-model="form.guests[index].firstName" type="text" placeholder="Prénom" required>
                       </div>
-                      <div class="col my-2">
+                    </div>
+                    <div class="row" v-if="number && number > 0">
+                      <div class="col-12 my-2 contact">
                         <input v-model="form.guests[index].lastName" type="text" placeholder="Nom">
                       </div>
-                      <div class="col my-2">
+                    </div>
+                    <div class="row" v-if="number && number > 0">
+                      <div class="col-12 my-2 contact">
                         <textarea
-                            v-model="form.guests[index].comment"
-                            cols="50"
-                            rows="1"
-                            placeholder="Commentaire (allergies, intolérances, etc.)"/>
-                      </div>
-                      <div class="col my-2 contact">
-                        <button v-if="form.guests[index].kid === true" class="btn btn-success" v-on:click="updateKid(form.guests[index])"><i class="fas fa-child"></i> Enfant</button>
-                        <button v-if="form.guests[index].kid === false" class="btn btn-light" v-on:click="updateKid(form.guests[index])"><i class="fas fa-child"></i> Enfant</button>
+                          v-model="form.guests[index].comment"
+                          cols="50"
+                          rows="3"
+                          placeholder="Commentaire (allergies, intolérances, etc.)"/>
                       </div>
                     </div>
 
-
-                    <div class="my-2 contact" v-if="number && number > 0 && guest.isInvitedApero">
-                      <button v-if="form.guests[index].apero === true" class="btn btn-success" v-on:click="updateApero(form.guests[index])"><i class="fas fa-cocktail"></i> Cocktail</button>
-                      <button v-if="form.guests[index].apero === false" class="btn btn-light" v-on:click="updateApero(form.guests[index])"><i class="fas fa-cocktail"></i> Coktail</button>
+                    <div class="row justify-content-around" v-if="number && number > 0">
+                      <div class="col my-2" v-if="number && number > 0 && guest.isInvitedApero">
+                        <button v-if="form.guests[index].kid === true" class="btn btn-success contact"
+                                v-on:click="updateKid(form.guests[index])"><i class="fas fa-child"></i> Enfant
+                        </button>
+                        <button v-if="form.guests[index].kid === false" class="btn btn-light contact"
+                                v-on:click="updateKid(form.guests[index])"><i class="fas fa-child"></i> Enfant
+                        </button>
+                      </div>
                     </div>
-                    <div class="my-2 contact" v-if="number && number > 0 && guest.isInvitedApero && guest.isInvitedDinner">
-                      <button v-if="form.guests[index].dinner === true" class="btn btn-success" v-on:click="updateDinner(form.guests[index])"><i class="fas fa-utensils"></i> Dîner</button>
-                      <button v-if="form.guests[index].dinner === false" class="btn btn-light" v-on:click="updateDinner(form.guests[index])"><i class="fas fa-utensils"></i> Dîner</button>
+                    <div class="row justify-content-around" v-if="number && number > 0">
+                      <div class="col my-2" v-if="number && number > 0 && guest.isInvitedApero">
+                        <button v-if="form.guests[index].apero === true" class="btn btn-success contact"
+                                v-on:click="updateApero(form.guests[index])"><i class="fas fa-cocktail"></i> Cocktail
+                        </button>
+                        <button v-if="form.guests[index].apero === false" class="btn btn-light contact"
+                                v-on:click="updateApero(form.guests[index])"><i class="fas fa-cocktail"></i> Coktail
+                        </button>
+                      </div>
+                    </div>
+                    <div class="row justify-content-around" v-if="number && number > 0">
+                      <div class="col my-2 contact" v-if="number && number > 0 && guest.isInvitedApero && guest.isInvitedDinner">
+                        <button v-if="form.guests[index].dinner === true" class="btn btn-success contact" v-on:click="updateDinner(form.guests[index])"><i class="fas fa-utensils"></i> Dîner
+                        </button>
+                        <button v-if="form.guests[index].dinner === false" class="btn btn-light contact"
+                                v-on:click="updateDinner(form.guests[index])"><i class="fas fa-utensils"></i> Dîner
+                        </button>
+                      </div>
                     </div>
                   </div>
                 </div>

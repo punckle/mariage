@@ -12,8 +12,9 @@
   <component name="ChangeListManager">
     <list default="true" id="bb627354-86e6-46bb-8483-25c4a7510288" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/public/assets/css/home.css" beforeDir="false" afterPath="$PROJECT_DIR$/project/public/assets/css/home.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/templates/home/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/project/templates/home/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/assets/js/Vue/FormGuestInvitation.vue" beforeDir="false" afterPath="$PROJECT_DIR$/project/assets/js/Vue/FormGuestInvitation.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/src/Controller/AdminController.php" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/Controller/AdminController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/templates/admin/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/project/templates/admin/index.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,23 +36,22 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/project/src/Form/GuestFormInvitationType.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/project/config/packages/assets.yaml" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/project/templates/guest/form_guest_invitation.html.twig" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/project/config/packages/webpack_encore.yaml" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/project/package.json" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/project/src/Entity/Guest.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/project/src/Entity/GuestPlusOne.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/project/src/Controller/GuestController.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/project/templates/base.html.twig" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/project/assets/styles/app.scss" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/project/assets/app.js" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/project/assets/js/app.js" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/project/webpack.config.js" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/project/package.json" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/project/templates/base.html.twig" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/project/assets/app.js" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/project/config/packages/assets.yaml" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/project/config/packages/webpack_encore.yaml" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/project/templates/guest/invitation.html.twig" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/project/assets/js/formGuestInvitation.js" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/project/templates/guest/form_guest_invitation.html.twig" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/project/assets/js/Vue/FormGuestInvitation.vue" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/project/src/Form/GuestFormInvitationType.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/project/assets/styles/app.scss" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/project/src/Entity/GuestPlusOne.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Makefile" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/project/src/Entity/Guest.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/project/src/Controller/GuestController.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/project/assets/js/Vue/FormGuestInvitation.vue" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectId" id="1rw1ds9yti57ybpLYkRuZfpj3Bc" />
   <component name="ProjectLevelVcsManager">
@@ -64,7 +64,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/project/public/assets/images" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="configurable.group.language" />
     <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
@@ -100,6 +100,10 @@
       <workItem from="1621755674659" duration="778000" />
       <workItem from="1621756461657" duration="70000" />
       <workItem from="1621756541466" duration="18491000" />
+      <workItem from="1621837158591" duration="9000" />
+      <workItem from="1621861677953" duration="67000" />
+      <workItem from="1621931241406" duration="26000" />
+      <workItem from="1622125067862" duration="2803000" />
     </task>
     <servers />
   </component>
