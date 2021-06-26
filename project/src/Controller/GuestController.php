@@ -4,12 +4,10 @@ namespace App\Controller;
 
 use App\Entity\Guest;
 use App\Entity\GuestPlusOne;
-use App\Form\GuestCodeType;
 use App\Form\GuestEditType;
 use App\Form\GuestFormInvitationType;
 use App\Form\GuestType;
 use App\Repository\GuestRepository;
-use App\Repository\UserRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
@@ -173,12 +171,11 @@ class GuestController extends AbstractController
     /**
      * @Route("invite/plus_ones/{id}", name="show_plus_ones")
      */
-    public function showPlusOnes(Guest$guest)
+    public function showPlusOnes(Guest $guest)
     {
         $plusOnes = $this->em->getRepository(GuestPlusOne::class)->findBy(['guest' => $guest->getId()]);
 
         return $this->render('guest/plus_ones.html.twig', [
-            'guest' => $guest,
             'guest' => $guest,
             'plusOnes' => $plusOnes
         ]);
@@ -250,6 +247,18 @@ class GuestController extends AbstractController
 
         return $this->redirectToRoute('show_plus_ones', [
             'id' => $id
+        ]);
+    }
+
+    /**
+     * @Route("/all_guests", name="all_guest")
+     */
+    public function allInvites()
+    {
+        $allGuests = $this->em->getRepository(GuestPlusOne::class)->findBy([], ['lastName' => 'ASC']);
+
+        return $this->render('guest/all_guests.html.twig', [
+            'allGuests' => $allGuests
         ]);
     }
 }

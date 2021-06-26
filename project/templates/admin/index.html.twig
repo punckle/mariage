@@ -33,9 +33,9 @@
                         <div class="card-body">
                             <h4 class="card-title"><i class="fas fa-gift"></i></h4>
                             <h4>
-                                <a href="{{ path('guest_index') }}" style="text-decoration: none; color: black;"> Groupes-Invités</a>
+                                <a href="{{ path('guest_index') }}" style="text-decoration: none; color: black;"> Groupes</a>
                             </h4>
-                            <span class="badge badge-dark">{{ guestsGroupes|length}} groupes-invités</span>
+                            <span class="badge badge-dark">{{ guestsGroupes|length}} groupes</span>
                         </div>
                     </div>
                 </div>
@@ -44,11 +44,25 @@
                         <div class="card-body">
                             <h4 class="card-title"><i class="fas fa-gift"></i></h4>
                             <h4>
-                                <a href="#" style="text-decoration: none; color: black;"> Invités</a>
+                                <a href="{{ path('all_guest') }}" style="text-decoration: none; color: black;"> Invités</a>
                             </h4>
                             <span class="badge badge-dark">{{ guests|length}} invités</span>
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="jumbotron">
+            <div class="container">
+                <h2 class="text-center mb-5">Recherche</h2>
+                <div class="form-inline justify-content-md-center">
+                    {{ form_start(form) }}
+                    <div class="form-group mx-sm-3 mb-2">
+                        {{ form_widget(form) }}
+                        <button type="submit" class="btn btn-primary submit ml-2">Rechercher</button>
+                    </div>
+                    {{ form_end(form) }}
                 </div>
             </div>
         </div>

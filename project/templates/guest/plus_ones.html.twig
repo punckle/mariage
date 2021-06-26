@@ -15,6 +15,14 @@
     </div>
 
     <div class="position-relative overflow-hidden text-center">
+        <div class="row">
+            <div class="col-6 text-center">
+                <a href="{{ path('guest_index') }}" class="btn btn-outline-dark"><i class="fas fa-arrow-circle-left"></i></a>
+            </div>
+            <div class="col-6 text-center">
+                <a href="{{ path('admin') }}" class="btn btn-outline-dark"><i class="fas fa-home"></i></a>
+            </div>
+        </div>
         <div class="p-lg-5 mx-auto my-2">
             <a href="{{ path('plus_one_new', {'id': guest.id}) }}" class="btn btn-primary">Ajouter des invités</a>
         </div>
@@ -111,6 +119,11 @@
                 </div>
             {% endif %}
         </div>
+        {% if guest.message %}
+        <div class="jumbotron">
+            <p>{{ guest.message }}</p>
+        </div>
+        {% endif %}
     </div>
 
 {% endblock %}

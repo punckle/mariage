@@ -2,8 +2,12 @@
 
 namespace App\Controller;
 
+use App\Form\ContactType;
+use Symfony\Bridge\Twig\Mime\TemplatedEmail;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\Mailer\MailerInterface;
+use Symfony\Component\Mime\Address;
 use Symfony\Component\Routing\Annotation\Route;
 
 class HomeController extends AbstractController
@@ -14,5 +18,40 @@ class HomeController extends AbstractController
     public function index()
     {
         return $this->render('home/index.html.twig');
+    }
+
+    /**
+     * @Route("/contact", name="contact")
+     */
+    public function contact(Request $request, MailerInterface $mailer)
+    {
+        $form = $this->createForm(ContactType::class);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $data = $form->getData();
+           $email = (new TemplatedEmail())
+               ->from(new Address($data['mail']))
+               ->to(new Address('baillet.manon@gmail.com', 'Manon Baillet'))
+               ->subject('Formulaire de contact Mariage')
+               ->htmlTemplate('message/contact.html.twig')
+               ->context([
+                   'contact' => $data['mail'],
+                   'subject' => $data['subject'],
+                   'description' => $data['description']
+               ]);
+
+           $mailer->send($email);
+            $this->addFlash(
+                'success',
+                'Votre message a bien été envoyé. Quelqu\'un y répondra dès que possible'
+            );
+
+            return $this->redirectToRoute('home');
+        }
+
+        return $this->render('home/contact.html.twig', [
+            'form' => $form->createView()
+        ]);
     }
 }

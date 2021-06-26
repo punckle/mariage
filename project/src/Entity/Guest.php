@@ -86,6 +86,11 @@ class Guest
         $this->guestPlusOnes = new ArrayCollection();
     }
 
+    public function __toString()
+    {
+        return $this->lastName . ' ' . $this->firstName;
+    }
+
     public function toJson(): array
     {
         $guest = [

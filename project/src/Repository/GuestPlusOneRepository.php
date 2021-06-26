@@ -19,32 +19,16 @@ class GuestPlusOneRepository extends ServiceEntityRepository
         parent::__construct($registry, GuestPlusOne::class);
     }
 
-    // /**
-    //  * @return GuestPlusOne[] Returns an array of GuestPlusOne objects
-    //  */
-    /*
-    public function findByExampleField($value)
+    public function getGuestFromResearch($query)
     {
-        return $this->createQueryBuilder('g')
-            ->andWhere('g.exampleField = :val')
-            ->setParameter('val', $value)
-            ->orderBy('g.id', 'ASC')
-            ->setMaxResults(10)
-            ->getQuery()
-            ->getResult()
+        $qb = $this->createQueryBuilder('entity')
+            ->where("(LOWER(entity.lastName) LIKE LOWER(:query))")
+            ->orWhere("(LOWER(entity.firstName) LIKE LOWER(:query))")
+            ->setParameter('query', "%".$query."%")
+            ->orderBy('entity.lastName', 'ASC')
+            ->addOrderBy('entity.firstName', 'ASC')
         ;
-    }
-    */
 
-    /*
-    public function findOneBySomeField($value): ?GuestPlusOne
-    {
-        return $this->createQueryBuilder('g')
-            ->andWhere('g.exampleField = :val')
-            ->setParameter('val', $value)
-            ->getQuery()
-            ->getOneOrNullResult()
-        ;
+        return $qb->getQuery()->execute();
     }
-    */
 }

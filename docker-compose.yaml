@@ -1,19 +1,19 @@
 version: '3.8'
 services:
     db:
-        image: 'mysql:latest'
+        image: 'mariadb'
         container_name: db_docker_mariage
         restart: always
         volumes:
-        -   db-data:/var/lib/mysql
+        -   db-data:/var/lib/mariadb
         environment:
-            MYSQL_ALLOW_EMPTY_PASSWORD: 'yes'
+            MYSQL_ROOT_PASSWORD: password
         networks:
             - dev
 
     phpmyadmin:
         image: phpmyadmin
-        container_name: phpmyadmon_docker_mariage
+        container_name: phpmyadmin_docker_mariage
         restart: always
         depends_on:
             -   db
@@ -24,12 +24,12 @@ services:
         networks:
             - dev
 
-    maildev:
-        image: maildev/maildev
-        container_name: maildev_docker_mariage
-        command: bin/maildev --web 80 --smtp 25 --hide-extensions STARTTLS
+    smtp:
+        image: mailhog/mailhog
+        container_name: mailhog_docker_mariage
         ports:
-            -   "8081:25"
+            - 25:1025
+            - 0.0.0.0:8025:8025
         restart: always
         networks:
             - dev
@@ -43,6 +43,9 @@ services:
             - ./php/vhosts:/etc/apache2/sites-enabled
             - ./:/var/www
         restart: always
+        links:
+            - db
+            - smtp
         networks:
             - dev
 

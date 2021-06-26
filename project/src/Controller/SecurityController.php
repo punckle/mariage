@@ -80,6 +80,7 @@ class SecurityController extends AbstractController
                 'success',
                 'Votre inscription a bien été prise en compte et sera validée prochainement par un administrateur'
             );
+
             return $this->redirectToRoute('home');
         }
 

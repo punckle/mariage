@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Contactez-nous !{% endblock %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/contact.css') }}">
+{% endblock %}
+
+{% block body %}
+    <header class="masthead text-center text-white d-flex">
+        <div class="container my-auto">
+            <div class="row">
+                <div class="col-lg-10 mx-auto">
+                    <h1 class="text-uppercase">
+                        <strong>Contactez-nous !</strong>
+                    </h1>
+                    <br>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="container contact">
+        <h4 class="text-center mt-5 mb-5">Une question ? Contactez-nous par le biais de ce formulaire.<br>
+            Quelqu'un vous répondra au plus vite.</h4>
+        {{ form_start(form) }}
+        <div class="my-4 text-center">
+            {{ form_row(form.mail) }}
+        </div>
+        <div class="my-4 text-center">
+            {{ form_widget(form.subject) }}
+        </div>
+        <div class="my-4 text-center">
+            {{ form_widget(form.description) }}
+        </div>
+        <div class="col-12 d-flex justify-content-end">
+            <button type="submit" class="btn btn-success mb-4 submit">Envoyer</button>
+        </div>
+        {{ form_end(form) }}
+    </div>
+{% endblock %}

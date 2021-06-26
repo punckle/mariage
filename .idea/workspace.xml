@@ -12,9 +12,11 @@
   <component name="ChangeListManager">
     <list default="true" id="bb627354-86e6-46bb-8483-25c4a7510288" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/assets/js/Vue/FormGuestInvitation.vue" beforeDir="false" afterPath="$PROJECT_DIR$/project/assets/js/Vue/FormGuestInvitation.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/src/Controller/AdminController.php" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/Controller/AdminController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/templates/admin/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/project/templates/admin/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/Makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/.env" beforeDir="false" afterPath="$PROJECT_DIR$/project/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/src/Controller/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/Controller/HomeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/src/Controller/SecurityController.php" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/Controller/SecurityController.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,23 +37,31 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/project/src/Form/GuestFormInvitationType.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/project/config/packages/assets.yaml" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/project/templates/guest/form_guest_invitation.html.twig" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/project/config/packages/webpack_encore.yaml" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/project/package.json" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/project/src/Entity/Guest.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/project/src/Entity/GuestPlusOne.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/project/src/Controller/GuestController.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/project/templates/base.html.twig" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/project/assets/styles/app.scss" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/project/assets/app.js" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/project/assets/js/app.js" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/project/webpack.config.js" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/project/assets/js/formGuestInvitation.js" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/project/assets/styles/app.scss" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Makefile" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/project/assets/js/Vue/FormGuestInvitation.vue" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/project/templates/base.html.twig" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/project/webpack.config.js" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/project/src/Form/GuestFormInvitationType.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/project/src/Entity/GuestPlusOne.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/project/package.json" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/project/src/Entity/Guest.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/project/src/Controller/GuestController.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectId" id="1rw1ds9yti57ybpLYkRuZfpj3Bc" />
   <component name="ProjectLevelVcsManager">
@@ -63,19 +73,20 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/project/public/assets/images" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="configurable.group.language" />
+    <property name="settings.editor.selected.configurable" value="Symfony2.SettingsForm" />
     <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/project/public/assets/images" />
+      <recent name="$PROJECT_DIR$/project/src/Form" />
       <recent name="$PROJECT_DIR$/project/public/assets/css" />
       <recent name="$PROJECT_DIR$/project/node_modules" />
-      <recent name="$PROJECT_DIR$/project/src/Form" />
       <recent name="$PROJECT_DIR$/project/src/Entity" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -104,6 +115,12 @@
       <workItem from="1621861677953" duration="67000" />
       <workItem from="1621931241406" duration="26000" />
       <workItem from="1622125067862" duration="2803000" />
+      <workItem from="1624712865624" duration="3588000" />
+      <workItem from="1624716514676" duration="5681000" />
+      <workItem from="1624967023449" duration="34000" />
+      <workItem from="1625759408103" duration="93000" />
+      <workItem from="1625759510630" duration="1850000" />
+      <workItem from="1626267223603" duration="2500000" />
     </task>
     <servers />
   </component>

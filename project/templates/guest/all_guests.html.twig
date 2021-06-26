@@ -1,0 +1,135 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Tous les invités{% endblock %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/admin.css') }}">
+{% endblock %}
+
+{% block body %}
+
+    <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light masthead text-white">
+        <div class="col-md-5 p-lg-5 mx-auto my-5">
+            <h1 class="display-4 font-weight-normal">Tous invités</h1>
+        </div>
+    </div>
+
+    <div class="position-relative overflow-hidden text-center">
+        <div class="row">
+            <div class="col-6 text-center">
+                <a href="{{ path('admin') }}" class="btn btn-outline-dark"><i class="fas fa-arrow-circle-left"></i></a>
+            </div>
+            <div class="col-6 text-center">
+                <a href="{{ path('admin') }}" class="btn btn-outline-dark"><i class="fas fa-home"></i></a>
+            </div>
+        </div>
+
+
+        <div class="p-lg-5 mx-auto my-2">
+            {% if allGuests|length > 0 %}
+                <table class="table table-hover">
+                    <thead>
+                    <tr>
+                        <th scope="col">Nom & Prénom</th>
+                        <th scope="col">Groupe rattaché</th>
+                        <th scope="col">Apéro</th>
+                        <th scope="col">Dîner</th>
+                        <th scope="col">Enfant</th>
+                        <th scope="col">Commentaire</th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for guest in allGuests %}
+                        <tr class="table-light">
+                            <th scope="row">{{ guest.lastName }} {{ guest.firstName }}</th>
+                            <th>
+                                <a href="{{ path('show_plus_ones', {'id': guest.guest.id}) }}">
+                                    {{ guest.guest }}
+                                </a>
+                            </th>
+                            <th>
+                                {% if guest.apero %}
+                                    <span class="badge badge-success">
+                                        <i class="fas fa-check"></i>
+                                    </span>
+                                {% else %}
+                                    <span class="badge badge-danger">
+                                        <i class="fas fa-times"></i>
+                                    </span>
+                                {% endif %}
+                            </th>
+                            <th>
+                                {% if guest.dinner %}
+                                    <span class="badge badge-success">
+                                        <i class="fas fa-check"></i>
+                                    </span>
+                                {% else %}
+                                    <span class="badge badge-danger">
+                                        <i class="fas fa-times"></i>
+                                    </span>
+                                {% endif %}
+                            </th>
+                            <th>
+                                {% if guest.kid %}
+                                    <span class="badge badge-success">
+                                        <i class="fas fa-check"></i>
+                                    </span>
+                                {% else %}
+                                    <span class="badge badge-danger">
+                                        <i class="fas fa-times"></i>
+                                    </span>
+                                {% endif %}
+                            </th>
+                            <th>{{ guest.comment }}</th>
+                            <th>
+                                <a href="{{ path('show_plus_ones', {'id': guest.id}) }}" class="btn btn-outline-info">
+                                    <i class="fas fa-search"></i>
+                                </a>
+                            </th>
+                            <th>
+                                <a href="{{ path('guest_edit', {'id': guest.id}) }}" class="btn btn-outline-warning">
+                                    <i class="fas fa-pen"></i>
+                                </a>
+                            </th>
+                            <th>
+                                <button type="button" class="btn btn-outline-danger" data-toggle="modal" data-target="#myModal">
+                                    <i class="fas fa-trash-alt"></i>
+                                </button>
+                                <!-- Modal -->
+                                <div id="myModal" class="modal fade" role="dialog">
+                                    <div class="modal-dialog">
+                                        <!-- Modal content-->
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <h4>Êtes-vous certain(e) de vouloir supprimer cet utilisateur ?</h4>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="button btn-danger">
+                                                    <a href="{{ path('guest_delete', {'id': guest.id}) }}" style="text-decoration: none; color: white;">Oui</a>
+                                                </button>
+                                                <button class="button btn-success" data-dismiss="modal">Non</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </th>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            {% else %}
+                <div class="alert alert-dismissible alert-warning">
+                    <h4 class="alert-heading">Aucun invité !</h4>
+                    <p class="mb-0">Il n'y a malheureusement aucun invité</p>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+
+{% endblock %}
