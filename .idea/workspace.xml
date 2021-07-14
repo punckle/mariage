@@ -11,8 +11,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bb627354-86e6-46bb-8483-25c4a7510288" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.github/workflows/jekyll.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/.github/workflows/test.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/test.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/.github/workflows/validate.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/validate.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/project/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/project/composer.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -86,6 +88,8 @@
       <recent name="$PROJECT_DIR$/project/src/Entity" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/project" />
       <recent name="$PROJECT_DIR$/project/assets/js" />
     </key>
   </component>
@@ -116,7 +120,7 @@
       <workItem from="1624967023449" duration="34000" />
       <workItem from="1625759408103" duration="93000" />
       <workItem from="1625759510630" duration="1850000" />
-      <workItem from="1626267223603" duration="11185000" />
+      <workItem from="1626267223603" duration="11713000" />
     </task>
     <servers />
   </component>
