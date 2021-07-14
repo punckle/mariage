@@ -7,6 +7,9 @@ Technologies used:
 - Docker
 - MailHog to intercept emails in dev mode
 
+Technologies use:
+- CI
+
 Guests will be able to:
 - view information about the event
 - answer easily to the invitation thanks to a QR-Code and a confidential code present on their paper invitation
