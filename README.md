@@ -23,14 +23,14 @@ Features already developed:
 - admin login page
 - admin area with user and guest management
 - reply to the invitation by entering a confidential code to validate that the person has been invited to the wedding
+- contact form
+- password change for admin
 
 Features to be developed:
 - wedding information page: this page will be secured by a confidential code, so that not everyone can see the details
 of the event and invite themselves without having been invited
-- contact form
 - recovery of confidential code
-- generation of condifential code
-- password change for admin
+- generation of confidential code
 - forgot your password
 - export XLSX
   

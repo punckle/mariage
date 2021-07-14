@@ -45,13 +45,6 @@ class GuestType extends AbstractType
                     'placeholder' => 'Nombre de personnes prévues'
                 ]
             ])
-            ->add('code', TextType::class, [
-                'required' => true,
-                'label' => false,
-                'attr' => [
-                    'placeholder' => 'Code'
-                ]
-            ])
             ->add('isInvitedApero', CheckboxType::class, [
                 'required' => false,
                 'attr' => [

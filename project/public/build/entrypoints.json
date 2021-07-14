@@ -2,17 +2,17 @@
   "entrypoints": {
     "app": {
       "js": [
-        "/build/runtime.32edc313.js",
-        "/build/app.8bd760a7.js"
+        "/build/runtime.js",
+        "/build/app.js"
       ],
       "css": [
-        "/build/app.31d6cfe0.css"
+        "/build/app.css"
       ]
     },
     "formGuestInvitation": {
       "js": [
-        "/build/runtime.32edc313.js",
-        "/build/formGuestInvitation.a6e5b00e.js"
+        "/build/runtime.js",
+        "/build/formGuestInvitation.js"
       ]
     }
   }

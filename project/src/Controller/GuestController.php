@@ -261,4 +261,28 @@ class GuestController extends AbstractController
             'allGuests' => $allGuests
         ]);
     }
+
+    /**
+     * @Route("/generer_code/{id}", name="generate_code")
+     */
+    public function generateCode(Guest $guest)
+    {
+        $possible = 'ABCDEFGHIJKLMNPQRSTUVWXYZ123456789';
+        $code = '';
+
+        for ($i = 0 ; $i < 5; $i++) {
+            $code .= $possible[rand(0, strlen($possible) - 1)];
+        }
+
+        $guest->setCode($code);
+        $this->em->persist($guest);
+        $this->em->flush();
+
+        $this->addFlash(
+            'success',
+            'Le code pour ' . $guest->getFirstName() . ' ' . $guest->getLastName() . ' a bien été généré'
+        );
+
+        return $this->redirectToRoute('guest_index');
+    }
 }
