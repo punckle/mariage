@@ -25,12 +25,12 @@ Features already developed:
 - reply to the invitation by entering a confidential code to validate that the person has been invited to the wedding
 - contact form
 - password change for admin
+- generation of confidential code
+- recovery of confidential code
 
 Features to be developed:
 - wedding information page: this page will be secured by a confidential code, so that not everyone can see the details
 of the event and invite themselves without having been invited
-- recovery of confidential code
-- generation of confidential code
 - forgot your password
 - export XLSX
   

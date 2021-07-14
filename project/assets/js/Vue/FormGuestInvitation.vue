@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <div class="position-relative overflow-hidden text-center">
-      <div class="p-lg-5 mx-auto my-2">
+      <div v-if="!lost" class="p-lg-5 mx-auto my-2">
         <div class="row">
           <div class="col text-center mb-4">
             Vous êtes invité au mariage de Manon & Xavier ? <br><br>
@@ -13,7 +13,8 @@
               <input v-model="code" type="text">
             </div>
           </div>
-          <div class="row justify-content-center" v-if="validCode === null">
+          <div class="text-center" v-if="validCode === null">
+            <button class="btn btn-warning contact my-3" v-on:click="lostCode()">Code perdu</button>
             <button class="btn btn-success contact my-3" v-on:click="sendCode(code)">Valider</button>
           </div>
 
@@ -169,6 +170,37 @@
             </button>
           </div>
       </div>
+
+      <div v-if="lost" class="p-lg-5 mx-auto my-2">
+        <div v-if="validSendLostCode === null">
+          <div class="row">
+            <div class="col text-center mb-4">
+              Pas de panique ! Si vous avez perdu votre code, il suffit de nous dire qui vous êtes. <br>
+              On vous enverra votre code au plus vite <i class="far fa-smile"></i>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col text-center my-4">
+              <input v-model="nameLostCode" type="text">
+            </div>
+          </div>
+          <div class="text-center" v-if="validCode === null">
+            <button class="btn btn-success contact my-3" v-on:click="sendLostCode(nameLostCode)">Valider</button>
+          </div>
+        </div>
+        <div v-if="validSendLostCode">
+          <div class="alert alert-info my-3">
+            Un message a été envoyé à Manon & Xavier. Si vous êtes bien sur la liste des invités, ils vous enverront
+            bientôt le code qui vous permettra de répondre à leur invitation.
+          </div>
+        </div>
+        <div v-if="validSendLostCode === false">
+          <div class="alert alert-danger my-3">
+            Une erreur s'est produite. Merci d'essayer à nouveau. <br>
+            Si le problème persiste, n'hésitez pas à contacter Manon & Xavier via le formulaire de contact.
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -178,6 +210,9 @@ export default {
   name: "FormGuestInvitation",
   data: function () {
     return {
+      lost: false,
+      nameLostCode: null,
+      validSendLostCode: null,
       number: null,
       code: null,
       validCode: null,
@@ -206,9 +241,23 @@ export default {
     updateDinner(guest) {
       guest.dinner = !guest.dinner
     },
+    lostCode() {
+      this.lost = true;
+    },
+    sendLostCode(name) {
+      this.$http.post('/guest/lost_code', {
+        name: this.nameLostCode
+      }).then((res) => {
+        if (res.data.status === 'ok') {
+          this.validSendLostCode = true
+        } else {
+          this.validSendLostCode = false
+        }
+      })
+    },
     sendCode(code) {
       this.$http.post('/guest/code_invitation', {
-        code: this.code,
+        code: this.code
       }).then((res) => {
         if (res.data.status === 'ok') {
           this.validCode = true

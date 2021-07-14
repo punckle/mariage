@@ -9,10 +9,14 @@ use App\Form\GuestFormInvitationType;
 use App\Form\GuestType;
 use App\Repository\GuestRepository;
 use Doctrine\ORM\EntityManagerInterface;
+use Symfony\Bridge\Twig\Mime\TemplatedEmail;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Mailer\MailerInterface;
+use Symfony\Component\Mime\Address;
+use Symfony\Component\Mime\Message;
 use Symfony\Component\Routing\Annotation\Route;
 
 class GuestController extends AbstractController
@@ -93,6 +97,36 @@ class GuestController extends AbstractController
     public function guestFormInvitation(Request $request)
     {
         return $this->render('guest/form_guest_invitation.html.twig');
+    }
+
+    /**
+     * @Route("/guest/lost_code", name="guest_lost_code", methods={"POST"})
+     */
+    public function lostCode(Request $request, MailerInterface $mailer)
+    {
+        $data = json_decode($request->getContent(), true);
+
+        if ($data['name']) {
+            $email = (new TemplatedEmail())
+                ->from(new Address('baillet.manon@gmail.com'))
+                ->to(new Address('baillet.manon@gmail.com'))
+                ->subject('Code invitation au mariage perdu')
+                ->htmlTemplate('message/code_perdu.html.twig')
+                ->context([
+                    'nom' => $data['name']
+                ]);
+
+            $mailer->send($email);
+
+            return new JsonResponse([
+                'status' => 'ok'
+            ]);
+        }
+
+        return new JsonResponse([
+            'status' => 'ko'
+        ]);
+
     }
 
     /**
