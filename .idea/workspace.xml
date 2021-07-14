@@ -12,9 +12,15 @@
   <component name="ChangeListManager">
     <list default="true" id="bb627354-86e6-46bb-8483-25c4a7510288" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/assets/js/Vue/FormGuestInvitation.vue" beforeDir="false" afterPath="$PROJECT_DIR$/project/assets/js/Vue/FormGuestInvitation.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/Makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/project/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/project/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/src/Controller/AdminController.php" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/Controller/AdminController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project/src/Controller/GuestController.php" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/Controller/GuestController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/src/Controller/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/Controller/HomeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/src/Controller/SecurityController.php" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/Controller/SecurityController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/src/Controller/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/Controller/UserController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/project/symfony.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -118,7 +124,7 @@
       <workItem from="1624967023449" duration="34000" />
       <workItem from="1625759408103" duration="93000" />
       <workItem from="1625759510630" duration="1850000" />
-      <workItem from="1626267223603" duration="8639000" />
+      <workItem from="1626267223603" duration="10477000" />
     </task>
     <servers />
   </component>

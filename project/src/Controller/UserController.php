@@ -21,7 +21,7 @@ use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
  */
 class UserController extends AbstractController
 {
-    private $em;
+    private EntityManagerInterface $em;
 
     public function __construct(EntityManagerInterface $em)
     {
@@ -72,7 +72,7 @@ class UserController extends AbstractController
     /**
      * @Route("/parametres", name="settings")
      */
-    public function settings(Request $request)
+    public function settings(Request $request): Response
     {
         $user = $this->getUser();
 
@@ -99,7 +99,7 @@ class UserController extends AbstractController
      * @Route("/update-password", name="update_password")
      * @Security("is_granted('ROLE_USER')")
      */
-    public function updatePassword(Request $request, UserPasswordEncoderInterface $encoder)
+    public function updatePassword(Request $request, UserPasswordEncoderInterface $encoder): Response
     {
         $passwordUpdate = new PasswordUpdate();
 
@@ -131,7 +131,7 @@ class UserController extends AbstractController
      * @Route("/delete", name="delete_account")
      * @Security("is_granted('ROLE_USER') and user === user")
      */
-    public function deleteAccount()
+    public function deleteAccount(): Response
     {
         $user = $this->getUser();
 

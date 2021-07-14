@@ -6,10 +6,12 @@ start:
 
 console:
 	docker exec -it www_mariage bash
-	cd project/
 
 stop:
 	docker-compose stop
 
-wp-watch: #WebPack Encore Watch
+wp-watch:
 	node_modules/.bin/encore dev --watch
+
+php-stan:
+	vendor/bin/phpstan analyse -l 5 src

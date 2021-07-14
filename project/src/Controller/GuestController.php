@@ -16,12 +16,11 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Mailer\MailerInterface;
 use Symfony\Component\Mime\Address;
-use Symfony\Component\Mime\Message;
 use Symfony\Component\Routing\Annotation\Route;
 
 class GuestController extends AbstractController
 {
-    private $em;
+    private EntityManagerInterface $em;
 
     public function __construct(EntityManagerInterface $em) {
         $this->em = $em;
@@ -94,7 +93,7 @@ class GuestController extends AbstractController
     /**
      * @Route("/invitation", name="guest")
      */
-    public function guestFormInvitation(Request $request)
+    public function guestFormInvitation(Request $request): Response
     {
         return $this->render('guest/form_guest_invitation.html.twig');
     }
@@ -102,7 +101,7 @@ class GuestController extends AbstractController
     /**
      * @Route("/guest/lost_code", name="guest_lost_code", methods={"POST"})
      */
-    public function lostCode(Request $request, MailerInterface $mailer)
+    public function lostCode(Request $request, MailerInterface $mailer): JsonResponse
     {
         $data = json_decode($request->getContent(), true);
 
@@ -132,7 +131,7 @@ class GuestController extends AbstractController
     /**
      * @Route("/guest/code_invitation", name="gues_code_invitation", methods={"POST"})
      */
-    public function getCodeGuest(Request $request)
+    public function getCodeGuest(Request $request): JsonResponse
     {
         $data = json_decode($request->getContent(), true);
         $guest = $this->em->getRepository(Guest::class)->findOneBy(['code' => $data['code']]);
@@ -152,7 +151,7 @@ class GuestController extends AbstractController
     /**
      * @Route("/guest/save_invitation", name="save_invitation_form")
      */
-    public function saveInvitationForm(Request $request)
+    public function saveInvitationForm(Request $request): JsonResponse
     {
         $form = json_decode($request->getContent(), true);
         $guest = $this->em->getRepository(Guest::class)->findOneBy(['id' => $form['guest']['id']]);
@@ -205,7 +204,7 @@ class GuestController extends AbstractController
     /**
      * @Route("invite/plus_ones/{id}", name="show_plus_ones")
      */
-    public function showPlusOnes(Guest $guest)
+    public function showPlusOnes(Guest $guest): Response
     {
         $plusOnes = $this->em->getRepository(GuestPlusOne::class)->findBy(['guest' => $guest->getId()]);
 
@@ -218,7 +217,7 @@ class GuestController extends AbstractController
     /**
      * @Route("invite/new/plus_one/{id}", name="plus_one_new")
      */
-    public function newPlusOne(Guest $guest, Request $request)
+    public function newPlusOne(Guest $guest, Request $request): Response
     {
         $plusOne = new GuestPlusOne();
         $form = $this->createForm(GuestFormInvitationType::class, $plusOne);
@@ -250,7 +249,7 @@ class GuestController extends AbstractController
     /**
      * @Route("edit/plus_one/{id}", name="edit_plus_one")
      */
-    public function editPlusOne(GuestPlusOne $guestPlusOne, Request $request)
+    public function editPlusOne(GuestPlusOne $guestPlusOne, Request $request): Response
     {
         $form = $this->createForm(GuestFormInvitationType::class, $guestPlusOne);
         $form->handleRequest($request);
@@ -273,7 +272,7 @@ class GuestController extends AbstractController
     /**
      * @Route("delete/plus_one/{id}", name="delete_plus_one")
      */
-    public function deletePlusOne(GuestPlusOne $guestPlusOne)
+    public function deletePlusOne(GuestPlusOne $guestPlusOne): Response
     {
         $id = $guestPlusOne->getGuest()->getId();
         $this->em->remove($guestPlusOne);
@@ -287,7 +286,7 @@ class GuestController extends AbstractController
     /**
      * @Route("/all_guests", name="all_guest")
      */
-    public function allInvites()
+    public function allInvites(): Response
     {
         $allGuests = $this->em->getRepository(GuestPlusOne::class)->findBy([], ['lastName' => 'ASC']);
 
@@ -299,7 +298,7 @@ class GuestController extends AbstractController
     /**
      * @Route("/generer_code/{id}", name="generate_code")
      */
-    public function generateCode(Guest $guest)
+    public function generateCode(Guest $guest): Response
     {
         $possible = 'ABCDEFGHIJKLMNPQRSTUVWXYZ123456789';
         $code = '';
