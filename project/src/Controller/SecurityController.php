@@ -7,7 +7,6 @@ use App\Form\RegistrationType;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bridge\Twig\Mime\TemplatedEmail;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Mailer\MailerInterface;
@@ -53,7 +52,7 @@ class SecurityController extends AbstractController
     /**
      * @Route("/admin/registration", name="registration")
      */
-    public function registration(Request $request, UserPasswordEncoderInterface $passwordEncoder, MailerInterface $mailer): RedirectResponse
+    public function registration(Request $request, UserPasswordEncoderInterface $passwordEncoder, MailerInterface $mailer): Response
     {
         $user = new User();
         $form = $this->createForm(RegistrationType::class, $user);

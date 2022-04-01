@@ -25,7 +25,7 @@
                             <input type="hidden" name="_csrf_token"
                                    value="{{ csrf_token('authenticate') }}"
                             >
-                            <a href="" class="btn btn-light submit" type="button">
+                            <a href="{{ path('forget_password') }}" class="btn btn-light submit">
                                 Mot de passe oublié
                             </a>
                             <button class="btn btn-lg btn-primary submit" type="submit">

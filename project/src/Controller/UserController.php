@@ -4,14 +4,19 @@ namespace App\Controller;
 
 use App\Entity\PasswordUpdate;
 use App\Entity\User;
+use App\Form\EmailPasswordResetType;
 use App\Form\PasswordUpdateType;
 use App\Form\SettingType;
 use App\Form\UserType;
 use App\Repository\UserRepository;
 use Doctrine\ORM\EntityManagerInterface;
+use Symfony\Bridge\Twig\Mime\TemplatedEmail;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Mailer\MailerInterface;
+use Symfony\Component\Mime\Address;
 use Symfony\Component\Routing\Annotation\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
@@ -146,5 +151,54 @@ class UserController extends AbstractController
         $this->addFlash('success', 'Votre compte a bien été supprimé');
 
         return $this->redirectToRoute('home');
+    }
+
+    /**
+     * @Route("/mot_de_passe_oublié", name="forget_password")
+     */
+    public function forgetPassword(Request $request, UserPasswordEncoderInterface $passwordEncoder, MailerInterface $mailer) : Response
+    {
+        $form = $this->createForm(EmailPasswordResetType::class);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $data = $form->getData();
+
+            $user = $this->em->getRepository(User::class)->findOneBy(['email' => $data['email']]);
+
+            if (!$user) {
+                $this->addFlash('warning', 'Aucun utilisateur n\'est lié à cette adresse mail');
+
+                return $this->redirectToRoute('app_login');
+            } else {
+                $characters = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz!:;,';
+                $charactersLength = strlen($characters) -1;
+                $password = [];
+                for ($i = 0; $i < 8; $i++) {
+                    $n= rand(0, $charactersLength);
+                    $password[] = $characters[$n];
+                }
+                $user->setPassword($passwordEncoder->encodePassword($user, implode($password)));
+                $this->em->persist($user);
+                $this->em->flush();
+
+                $email = (new TemplatedEmail())
+                    ->from(new Address('baillet.manon@gmail.com', 'Manon Baillet'))
+                    ->to(new Address($user->getEmail()))
+                    ->subject('Réinitialisation de votre mot de passe')
+                    ->htmlTemplate('message/reset_password.html.twig')
+                    ->context(['user' => $user, 'password' => implode($password)]);
+
+                $mailer->send($email);
+
+                $this->addFlash('success', 'Votre nouveau mot de passe vous a été envoyé par mail');
+
+                return $this->redirectToRoute('home');
+            }
+        }
+
+        return $this->render('security/reset_password.html.twig', [
+            'form' => $form->createView()
+        ]);
     }
 }
