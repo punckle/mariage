@@ -74,6 +74,7 @@ class UserController extends AbstractController
      */
     public function settings(Request $request): Response
     {
+        /** @var User $user */
         $user = $this->getUser();
 
         $form = $this->createForm(SettingType::class, $user);
@@ -103,6 +104,7 @@ class UserController extends AbstractController
     {
         $passwordUpdate = new PasswordUpdate();
 
+        /** @var User $user */
         $user = $this->getUser();
 
         $form = $this->createForm(PasswordUpdateType::class, $passwordUpdate);
@@ -133,6 +135,7 @@ class UserController extends AbstractController
      */
     public function deleteAccount(): Response
     {
+        /** @var User $user */
         $user = $this->getUser();
 
         $this->em->remove($user);

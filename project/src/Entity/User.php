@@ -16,16 +16,19 @@ class User implements UserInterface
      * @ORM\Id
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
+     * @var int
      */
     private $id;
 
     /**
      * @ORM\Column(type="string", length=180, unique=true)
+     * @var string
      */
     private $email;
 
     /**
      * @ORM\Column(type="json")
+     * @var array
      */
     private $roles = [];
 
@@ -37,11 +40,13 @@ class User implements UserInterface
 
     /**
      * @Assert\EqualTo(propertyPath="password", message="Les mots de passe ne correspondent pas")
+     * @var string
      */
     public $passwordConfirm;
 
     /**
      * @ORM\Column(type="boolean")
+     * @var boolean
      */
     private $actif;
 
@@ -120,7 +125,7 @@ class User implements UserInterface
     /**
      * @see UserInterface
      */
-    public function eraseCredentials()
+    public function eraseCredentials(): void
     {
         // If you store any temporary, sensitive data on the user, clear it here
         // $this->plainPassword = null;

@@ -14,26 +14,31 @@ class GuestPlusOne
      * @ORM\Id
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
+     * @var int
      */
     private $id;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @var string
      */
     private $firstName;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
+     * @var ?string
      */
     private $lastName;
 
     /**
      * @ORM\Column(type="boolean")
+     * @var boolean
      */
     private $apero = false;
 
     /**
      * @ORM\Column(type="boolean")
+     * @var boolean
      */
     private $dinner = false;
 
@@ -41,15 +46,17 @@ class GuestPlusOne
      * @ORM\ManyToOne(targetEntity=Guest::class, inversedBy="guestPlusOnes")
      * @ORM\JoinColumn(nullable=false)
      */
-    private $guest;
+    private ?Guest $guest;
 
     /**
      * @ORM\Column(type="text", nullable=true)
+     * @var ?string
      */
     private $comment;
 
     /**
      * @ORM\Column(type="boolean")
+     * @var boolean
      */
     private $kid = false;
 

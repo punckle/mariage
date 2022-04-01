@@ -7,6 +7,7 @@ use App\Form\RegistrationType;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bridge\Twig\Mime\TemplatedEmail;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Mailer\MailerInterface;
@@ -44,7 +45,7 @@ class SecurityController extends AbstractController
     /**
      * @Route("/admin/deconnexion", name="app_logout")
      */
-    public function logout()
+    public function logout(): Response
     {
         throw new \LogicException('This method can be blank - it will be intercepted by the logout key on your firewall.');
     }
@@ -52,7 +53,7 @@ class SecurityController extends AbstractController
     /**
      * @Route("/admin/registration", name="registration")
      */
-    public function registration(Request $request, UserPasswordEncoderInterface $passwordEncoder, MailerInterface $mailer)
+    public function registration(Request $request, UserPasswordEncoderInterface $passwordEncoder, MailerInterface $mailer): RedirectResponse
     {
         $user = new User();
         $form = $this->createForm(RegistrationType::class, $user);

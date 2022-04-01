@@ -18,66 +18,79 @@ class Guest
      * @ORM\Id
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
+     * @var int
      */
     private $id;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
+     * @var ?string
      */
     private $code;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
+     * @var ?string
      */
     private $email;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @var string
      */
     private $firstName;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @var string
      */
     private $lastName;
 
     /**
      * @ORM\Column(type="integer")
+     * @var int
      */
     private $initialNbPeople;
 
     /**
      * @ORM\Column(type="integer", nullable=true)
+     * @var ?int
      */
     private $finalNbPeople;
 
     /**
      * @ORM\Column(type="boolean")
+     * @var boolean
      */
     private $codeActif;
 
     /**
      * @ORM\Column(type="boolean", nullable=true)
+     * @var ?boolean
      */
     private $come;
 
     /**
      * @ORM\Column(type="boolean")
+     * @var boolean
      */
     private $isInvitedApero = true;
 
     /**
      * @ORM\Column(type="boolean")
+     * @var boolean
      */
     private $isInvitedDinner = false;
 
     /**
      * @ORM\OneToMany(targetEntity=GuestPlusOne::class, mappedBy="guest")
+     * @var Collection
      */
     private $guestPlusOnes;
 
     /**
      * @ORM\Column(type="text", nullable=true)
+     * @var ?string
      */
     private $message;
 

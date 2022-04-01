@@ -14,4 +14,4 @@ wp-watch:
 	node_modules/.bin/encore dev --watch
 
 php-stan:
-	vendor/bin/phpstan analyse -l 5 src
+    vendor/bin/phpstan analyse src --memory-limit=-1
