@@ -11,10 +11,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bb627354-86e6-46bb-8483-25c4a7510288" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/project/.github/workflows/test.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/test.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/.github/workflows/validate.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/validate.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/project/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/project/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/public/assets/css/guest.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/public/assets/css/home.css" beforeDir="false" afterPath="$PROJECT_DIR$/project/public/assets/css/home.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/project/templates/base.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/templates/guest/form_guest_invitation.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/project/templates/guest/form_guest_invitation.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/templates/home/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/project/templates/home/index.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,22 +47,25 @@
     </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/project/webpack.config.js" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/project/templates/base.html.twig" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/project/assets/app.js" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/project/src/Entity/Guest.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/project/assets/styles/app.scss" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/project/assets/js/formGuestInvitation.js" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/project/src/Entity/GuestPlusOne.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/project/assets/js/app.js" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/project/src/Form/GuestFormInvitationType.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/project/config/packages/webpack_encore.yaml" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/project/config/packages/assets.yaml" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/project/templates/guest/form_guest_invitation.html.twig" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/project/config/packages/webpack_encore.yaml" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/project/assets/app.js" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/project/assets/js/app.js" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/project/assets/js/formGuestInvitation.js" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/project/assets/styles/app.scss" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Makefile" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/project/assets/js/Vue/FormGuestInvitation.vue" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/project/templates/base.html.twig" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/project/webpack.config.js" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/project/src/Form/GuestFormInvitationType.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/project/src/Entity/GuestPlusOne.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/project/package.json" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/project/src/Entity/Guest.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/project/src/Controller/GuestController.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/project/assets/js/Vue/FormGuestInvitation.vue" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/project/package.json" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="1rw1ds9yti57ybpLYkRuZfpj3Bc" />
   <component name="ProjectLevelVcsManager">
@@ -88,6 +94,8 @@
       <recent name="$PROJECT_DIR$/project/src/Entity" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/project/public/assets/images/collages" />
+      <recent name="$PROJECT_DIR$/project/public/assets/images" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/project" />
       <recent name="$PROJECT_DIR$/project/assets/js" />
@@ -120,12 +128,33 @@
       <workItem from="1624967023449" duration="34000" />
       <workItem from="1625759408103" duration="93000" />
       <workItem from="1625759510630" duration="1850000" />
-      <workItem from="1626267223603" duration="11713000" />
+      <workItem from="1626267223603" duration="12336000" />
+      <workItem from="1627576753146" duration="438000" />
+      <workItem from="1628348634892" duration="25000" />
+      <workItem from="1628348811329" duration="1001000" />
+      <workItem from="1628412807980" duration="5084000" />
+      <workItem from="1628445340464" duration="3163000" />
+      <workItem from="1628507058816" duration="6825000" />
+      <workItem from="1629620960549" duration="1379000" />
+      <workItem from="1639921816983" duration="2119000" />
+      <workItem from="1640521506976" duration="18000" />
+      <workItem from="1641202873424" duration="123000" />
+      <workItem from="1648732610133" duration="4447000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ID_ORDER">
+      <list>
+        <option value="Default.Root" />
+        <option value="Default.Author" />
+        <option value="Default.Date" />
+        <option value="Default.Subject" />
+      </list>
+    </option>
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -137,7 +166,6 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
