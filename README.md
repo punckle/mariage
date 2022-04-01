@@ -6,6 +6,7 @@ Technologies used:
 - VueJS
 - Docker
 - MailHog to intercept emails in dev mode
+- PhpStan level 8 in dev mode
 
 Guests will be able to:
 - view information about the event
