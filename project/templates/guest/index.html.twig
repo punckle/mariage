@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Invités{% endblock %}
+{% block title %}Groupes{% endblock %}
 
 {% block stylesheets %}
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/admin.css') }}">
@@ -10,7 +10,7 @@
 
     <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light masthead text-white">
         <div class="col-md-5 p-lg-5 mx-auto my-5">
-            <h1 class="display-4 font-weight-normal">Les invités</h1>
+            <h1 class="display-4 font-weight-normal">Les groupes</h1>
         </div>
     </div>
 
@@ -24,7 +24,7 @@
             </div>
         </div>
         <div class="p-lg-5 mx-auto my-2">
-            <a href="{{ path('guest_new') }}" class="btn btn-primary">Ajouter des invités</a>
+            <a href="{{ path('guest_new') }}" class="btn btn-primary">Ajouter des groupes d'invités</a>
         </div>
         <div class="p-lg-5 mx-auto my-2">
             {% if guests|length > 0 %}
@@ -94,6 +94,7 @@
                                 </a>
                             </th>
                             <th>
+                                {% if guest.guestPlusOnes|length == 0 %}
                                 <button type="button" class="btn btn-outline-danger btn-sm" data-toggle="modal" data-target="#myModal">
                                     <i class="fas fa-trash-alt"></i>
                                 </button>
@@ -106,7 +107,7 @@
                                                 <button type="button" class="close" data-dismiss="modal">&times;</button>
                                             </div>
                                             <div class="modal-body">
-                                                <h4>Êtes-vous certain(e) de vouloir supprimer cet utilisateur ?</h4>
+                                                <h4>Êtes-vous certain(e) de vouloir supprimer ce groupe d'invités ?</h4>
                                             </div>
                                             <div class="modal-footer">
                                                 <button type="button" class="button btn-danger">
@@ -117,6 +118,7 @@
                                         </div>
                                     </div>
                                 </div>
+                                {% endif %}
                             </th>
                         </tr>
                     {% endfor %}

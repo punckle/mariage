@@ -82,12 +82,20 @@ class GuestController extends AbstractController
     /**
      * @Route("/invite/{id}/delete", name="guest_delete")
      */
-    public function delete(Guest $guest): Response
+    public function deleteGuest(Guest $guest): Response
     {
         $this->em->remove($guest);
         $this->em->flush();
 
         return $this->redirectToRoute('guest_index');
+    }
+
+    public function deleteGuestPlusOne(GuestPlusOne $guestPlusOne): Response
+    {
+        $this->em->remove($guestPlusOne);
+        $this->em->flush();
+
+        return $this->redirectToRoute('all_guest');
     }
 
     /**

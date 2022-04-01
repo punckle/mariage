@@ -47,14 +47,10 @@ class GuestType extends AbstractType
             ])
             ->add('isInvitedApero', CheckboxType::class, [
                 'required' => false,
-                'attr' => [
-                    'placeholder' => 'Apéro'
-                ]
+                'label' => 'Apéro'
             ])->add('isInvitedDinner', CheckboxType::class, [
                 'required' => false,
-                'attr' => [
-                    'placeholder' => 'Dîner'
-                ]
+                'label' => 'Dîner'
             ])
             ->add('save', SubmitType::class, ['label' => 'Ajouter'])
         ;
