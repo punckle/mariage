@@ -68,7 +68,8 @@
             <div v-if="form.isPresent === true">
               <div class="row">
                 <div class="col text-center my-2">
-                  Combien serez-vous (en vous incluant) ?
+                  L'invitation est prévue pour <strong>{{ guest.initialNbPeople }} personne(s) maximum</strong>
+                  Sur ces {{ guest.initialNbPeople }} personne(s), combien viendront ?
                 </div>
               </div>
               <div class="row">
@@ -78,9 +79,14 @@
               </div>
             </div>
 
-            <hr v-if="form.isPresent === true && form.number !== null">
+            <div v-if="form.isPresent === true && form.number !== null && form.number > guest.initialNbPeople" class="alert alert-warning">
+              L'invitation n'est prévue que pour {{ guest.initialNbPeople }} personne(s) maximum. Si vous désirez être plus,
+              merci de contacter Manon & Xavier <i class="fas fa-smile"></i>
+            </div>
 
-            <div v-if="form.isPresent === true && form.number !== null">
+            <hr v-if="form.isPresent === true && form.number !== null && form.number <= guest.initialNbPeople">
+
+            <div v-if="form.isPresent === true && form.number !== null && form.number <= guest.initialNbPeople">
               <div class="row">
                 <div class="col text-center my-2">
                   Merci de répondre au formulaire pour chaque personne (même vous !)
@@ -148,7 +154,7 @@
               </div>
             </div>
 
-            <div v-if="form.isPresent === true && form.number !== null">
+            <div v-if="form.isPresent === true && form.number !== null && form.number <= guest.initialNbPeople">
               <div class="row">
                 <div class="col text-center my-2">
                   Si vous le voulez, vous pouvez laisser un petit message aux futurs mariés :

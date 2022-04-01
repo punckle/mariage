@@ -96,7 +96,8 @@ class Guest
         $guest = [
             'id' => $this->id,
             'isInvitedApero' => $this->isInvitedApero,
-            'isInvitedDinner' => $this->isInvitedDinner
+            'isInvitedDinner' => $this->isInvitedDinner,
+            'initialNbPeople' => $this->initialNbPeople
         ];
 
         return $guest;
