@@ -6,6 +6,7 @@ Technologies used:
 - VueJS
 - Docker
 - MailHog to intercept emails in dev mode
+- PhpStan level 8 in dev mode
 
 Guests will be able to:
 - view information about the event
@@ -27,11 +28,11 @@ Features already developed:
 - password change for admin
 - generation of confidential code
 - recovery of confidential code
+- forgot your password
 
 Features to be developed:
 - wedding information page: this page will be secured by a confidential code, so that not everyone can see the details
 of the event and invite themselves without having been invited
-- forgot your password
 - export XLSX
   
 
