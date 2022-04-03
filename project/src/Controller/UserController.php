@@ -12,7 +12,6 @@ use App\Repository\UserRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bridge\Twig\Mime\TemplatedEmail;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Mailer\MailerInterface;
@@ -20,6 +19,7 @@ use Symfony\Component\Mime\Address;
 use Symfony\Component\Routing\Annotation\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 
 /**
  * @Route("/admin/user")
@@ -35,6 +35,7 @@ class UserController extends AbstractController
 
     /**
      * @Route("/", name="user_index", methods={"GET"})
+     * @IsGranted("ROLE_ADMIN")
      */
     public function index(UserRepository $userRepository): Response
     {
@@ -45,6 +46,7 @@ class UserController extends AbstractController
 
     /**
      * @Route("/{id}/edit", name="user_edit", methods={"GET","POST"})
+     * @IsGranted("ROLE_ADMIN")
      */
     public function edit(Request $request, User $user): Response
     {
@@ -65,6 +67,7 @@ class UserController extends AbstractController
 
     /**
      * @Route("/{id}/delete", name="user_delete")
+     * @IsGranted("ROLE_ADMIN")
      */
     public function delete(User $user): Response
     {
@@ -76,6 +79,7 @@ class UserController extends AbstractController
 
     /**
      * @Route("/parametres", name="settings")
+     * @IsGranted("ROLE_ADMIN")
      */
     public function settings(Request $request): Response
     {
@@ -103,7 +107,7 @@ class UserController extends AbstractController
 
     /**
      * @Route("/update-password", name="update_password")
-     * @Security("is_granted('ROLE_USER')")
+     * @IsGranted("ROLE_ADMIN")
      */
     public function updatePassword(Request $request, UserPasswordEncoderInterface $encoder): Response
     {
@@ -136,7 +140,7 @@ class UserController extends AbstractController
 
     /**
      * @Route("/delete", name="delete_account")
-     * @Security("is_granted('ROLE_USER') and user === user")
+     * @IsGranted("ROLE_ADMIN")
      */
     public function deleteAccount(): Response
     {

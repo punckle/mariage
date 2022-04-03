@@ -20,6 +20,7 @@ use Symfony\Component\HttpFoundation\ResponseHeaderBag;
 use Symfony\Component\Mailer\MailerInterface;
 use Symfony\Component\Mime\Address;
 use Symfony\Component\Routing\Annotation\Route;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 
 class GuestController extends AbstractController
 {
@@ -31,6 +32,7 @@ class GuestController extends AbstractController
 
     /**
      * @Route("/invites", name="guest_index", methods={"GET"})
+     * @IsGranted("ROLE_ADMIN")
      */
     public function index(GuestRepository $guestRepository): Response
     {
@@ -41,6 +43,7 @@ class GuestController extends AbstractController
 
     /**
      * @Route("/nouvel_invite", name="guest_new", methods={"GET","POST"})
+     * @IsGranted("ROLE_ADMIN")
      */
     public function new(Request $request): Response
     {
@@ -64,6 +67,7 @@ class GuestController extends AbstractController
 
     /**
      * @Route("/invite/{id}/edit", name="guest_edit", methods={"GET","POST"})
+     * @IsGranted("ROLE_ADMIN")
      */
     public function edit(Request $request, Guest $guest): Response
     {
@@ -84,6 +88,7 @@ class GuestController extends AbstractController
 
     /**
      * @Route("/invite/{id}/delete", name="guest_delete")
+     * @IsGranted("ROLE_ADMIN")
      */
     public function deleteGuest(Guest $guest): Response
     {
@@ -140,7 +145,7 @@ class GuestController extends AbstractController
     }
 
     /**
-     * @Route("/guest/code_invitation", name="gues_code_invitation", methods={"POST"})
+     * @Route("/guest/code_invitation", name="guest_code_invitation", methods={"POST"})
      */
     public function getCodeGuest(Request $request): JsonResponse
     {
@@ -196,24 +201,9 @@ class GuestController extends AbstractController
         ]);
     }
 
-    private function createPlusOnes($data, Guest $guest)
-    {
-        foreach ($data['guests'] as $dataPlusOne) {
-            $plusOne = new GuestPlusOne();
-            $plusOne->setFirstName($dataPlusOne['firstName']);
-            $plusOne->setLastName($dataPlusOne['lastName']);
-            $plusOne->setApero($dataPlusOne['apero']);
-            $plusOne->setDinner($dataPlusOne['dinner']);
-            $plusOne->setComment($dataPlusOne['comment']);
-            $plusOne->setGuest($guest);
-            $plusOne->setKid($dataPlusOne['kid']);
-            $this->em->persist($plusOne);
-        }
-        $this->em->flush();
-    }
-
     /**
      * @Route("invite/plus_ones/{id}", name="show_plus_ones")
+     * @IsGranted("ROLE_ADMIN")
      */
     public function showPlusOnes(Guest $guest): Response
     {
@@ -227,6 +217,7 @@ class GuestController extends AbstractController
 
     /**
      * @Route("invite/new/plus_one/{id}", name="plus_one_new")
+     * @IsGranted("ROLE_ADMIN")
      */
     public function newPlusOne(Guest $guest, Request $request): Response
     {
@@ -259,6 +250,7 @@ class GuestController extends AbstractController
 
     /**
      * @Route("edit/plus_one/{id}", name="edit_plus_one")
+     * @IsGranted("ROLE_ADMIN")
      */
     public function editPlusOne(GuestPlusOne $guestPlusOne, Request $request): Response
     {
@@ -282,6 +274,7 @@ class GuestController extends AbstractController
 
     /**
      * @Route("delete/plus_one/{id}", name="delete_plus_one")
+     * @IsGranted("ROLE_ADMIN")
      */
     public function deletePlusOne(GuestPlusOne $guestPlusOne): Response
     {
@@ -296,6 +289,7 @@ class GuestController extends AbstractController
 
     /**
      * @Route("/all_guests", name="all_guest")
+     * @IsGranted("ROLE_ADMIN")
      */
     public function allInvites(): Response
     {
@@ -308,6 +302,7 @@ class GuestController extends AbstractController
 
     /**
      * @Route("/generer_code/{id}", name="generate_code")
+     * @IsGranted("ROLE_ADMIN")
      */
     public function generateCode(Guest $guest): Response
     {
@@ -332,6 +327,7 @@ class GuestController extends AbstractController
 
     /**
      * @Route("/export_guests", name="export_guests")
+     * @IsGranted("ROLE_ADMIN")
      */
     public function exportGuests(ExportGuestService $exportGuestService): Response
     {
@@ -354,5 +350,21 @@ class GuestController extends AbstractController
         );
 
         return $this->redirectToRoute('all_guest');
+    }
+
+    private function createPlusOnes($data, Guest $guest)
+    {
+        foreach ($data['guests'] as $dataPlusOne) {
+            $plusOne = new GuestPlusOne();
+            $plusOne->setFirstName($dataPlusOne['firstName']);
+            $plusOne->setLastName($dataPlusOne['lastName']);
+            $plusOne->setApero($dataPlusOne['apero']);
+            $plusOne->setDinner($dataPlusOne['dinner']);
+            $plusOne->setComment($dataPlusOne['comment']);
+            $plusOne->setGuest($guest);
+            $plusOne->setKid($dataPlusOne['kid']);
+            $this->em->persist($plusOne);
+        }
+        $this->em->flush();
     }
 }

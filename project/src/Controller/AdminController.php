@@ -6,12 +6,12 @@ use App\Entity\Guest;
 use App\Entity\GuestPlusOne;
 use App\Entity\User;
 use App\Form\RechercheRapideType;
-use Doctrine\ORM\EntityManager;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 
 class AdminController extends AbstractController
 {
@@ -24,6 +24,7 @@ class AdminController extends AbstractController
 
     /**
      * @Route("/admin", name="admin")
+     * @IsGranted("ROLE_ADMIN")
      */
     public function adminDashboard(Request $request): Response
     {
@@ -50,6 +51,7 @@ class AdminController extends AbstractController
 
     /**
      * @Route("/recherche/{data}", name="result_search")
+     * @IsGranted("ROLE_ADMIN")
      */
     public function resultSearch(Request $request)
     {

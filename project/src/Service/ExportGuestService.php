@@ -33,9 +33,9 @@ class ExportGuestService
             $sheet->setCellValue('E' . $i, $guest->getGuest()->getFinalNbPeople());
             $sheet->setCellValue('F' . $i, $this->getBoolean($guest->getApero()));
             $sheet->setCellValue('G' . $i, $this->getBoolean($guest->getDinner()));
-            $sheet->setCellValue('B' . $i, $this->getBoolean($guest->getKid()));
-            $sheet->setCellValue('B' . $i, $guest->getComment());
-            $sheet->setCellValue('B' . $i, $guest->getGuest()->getMessage());
+            $sheet->setCellValue('H' . $i, $this->getBoolean($guest->getKid()));
+            $sheet->setCellValue('I' . $i, $guest->getComment());
+            $sheet->setCellValue('J' . $i, $guest->getGuest()->getMessage());
 
             $i++;
         }
