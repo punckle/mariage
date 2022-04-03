@@ -13,6 +13,7 @@
         "doctrine/doctrine-migrations-bundle": "^3.1",
         "doctrine/orm": "^2.8",
         "phpdocumentor/reflection-docblock": "^5.2",
+        "phpoffice/phpspreadsheet": "^1.22",
         "phpstan/phpstan": "^0.12.88",
         "phpstan/phpstan-doctrine": "^0.12.32",
         "phpstan/phpstan-mockery": "^0.12.12",

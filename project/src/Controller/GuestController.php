@@ -8,12 +8,15 @@ use App\Form\GuestEditType;
 use App\Form\GuestFormInvitationType;
 use App\Form\GuestType;
 use App\Repository\GuestRepository;
+use App\Service\ExportGuestService;
 use Doctrine\ORM\EntityManagerInterface;
+use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
 use Symfony\Bridge\Twig\Mime\TemplatedEmail;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\ResponseHeaderBag;
 use Symfony\Component\Mailer\MailerInterface;
 use Symfony\Component\Mime\Address;
 use Symfony\Component\Routing\Annotation\Route;
@@ -325,5 +328,31 @@ class GuestController extends AbstractController
         );
 
         return $this->redirectToRoute('guest_index');
+    }
+
+    /**
+     * @Route("/export_guests", name="export_guests")
+     */
+    public function exportGuests(ExportGuestService $exportGuestService): Response
+    {
+        $guests = $this->em->getRepository(GuestPlusOne::class)->findAll();
+        $spreadsheet = $exportGuestService->export($guests);
+
+        $writer = new Xlsx($spreadsheet);
+        $today = new \DateTime('now');
+        $fileName = 'export_invites_' . $today->format('Ymd') . '.xlsx';
+        $temp_file = tempnam(sys_get_temp_dir(), $fileName);
+
+        if ($temp_file !== false) {
+            $writer->save($temp_file);
+            return $this->file($temp_file, $fileName, ResponseHeaderBag::DISPOSITION_INLINE);
+        }
+
+        $this->addFlash(
+            'error',
+            'Une erreur est survenue'
+        );
+
+        return $this->redirectToRoute('all_guest');
     }
 }

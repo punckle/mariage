@@ -12,11 +12,11 @@
   <component name="ChangeListManager">
     <list default="true" id="bb627354-86e6-46bb-8483-25c4a7510288" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/src/Controller/SecurityController.php" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/Controller/SecurityController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/src/Controller/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/Controller/UserController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/src/Security/LoginFormAuthenticator.php" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/Security/LoginFormAuthenticator.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/templates/security/login.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/project/templates/security/login.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/templates/user/update_password.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/project/templates/user/update_password.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/project/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/project/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/src/Controller/GuestController.php" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/Controller/GuestController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/project/symfony.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/templates/guest/all_guests.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/project/templates/guest/all_guests.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -138,7 +138,8 @@
       <workItem from="1639921816983" duration="2119000" />
       <workItem from="1640521506976" duration="18000" />
       <workItem from="1641202873424" duration="123000" />
-      <workItem from="1648732610133" duration="9851000" />
+      <workItem from="1648732610133" duration="10767000" />
+      <workItem from="1648996458590" duration="1728000" />
     </task>
     <servers />
   </component>
