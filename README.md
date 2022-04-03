@@ -29,10 +29,10 @@ Features already developed:
 - generation of confidential code
 - recovery of confidential code
 - forgot your password
+- export XLSX
 
 Features to be developed:
 - wedding information page: this page will be secured by a confidential code, so that not everyone can see the details
 of the event and invite themselves without having been invited
-- export XLSX
   
 
