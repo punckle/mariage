@@ -79,7 +79,7 @@
               </div>
               <div class="row" v-if="form.isPresent === true && form.number !== null && form.number <= guest.initialNbPeople">
                 <div class="col text-center my-2">
-                  <button class="btn btn-primary" @click="confirmNumberPeople">Confirmer le nombre de personnes</button>
+                  <button class="btn btn-primary contact" @click="confirmNumberPeople">Confirmer le nombre de personnes</button>
                 </div>
               </div>
             </div>
@@ -176,7 +176,7 @@
           Merci d'indiquer au moins un prénom à chaque invité.
         </div>
           <div class="float-right">
-            <button class="btn btn-success contact" type="submit" v-if="validCode && form.isPresent !== null" v-on:click="saveGuestInvitation">
+            <button class="btn btn-success contact" type="submit" v-if="validCode && form.isPresent !== null && form.number !== null && form.number <= guest.initialNbPeople && form.guests.length !== 0" v-on:click="saveGuestInvitation">
               Envoyer les informations
             </button>
           </div>

@@ -56,10 +56,12 @@ class AdminController extends AbstractController
     public function resultSearch(Request $request)
     {
         $query = $request->get('data');
-        $guests = $this->em->getRepository(GuestPlusOne::class)->getGuestFromResearch($query);
+        $guests = $this->em->getRepository(Guest::class)->getGuestsFromResearch($query);
+        $guestsPlusOne = $this->em->getRepository(GuestPlusOne::class)->getGuestsPlusOneFromResearch($query);
 
         return $this->render('guest/result_search.html.twig', [
             'guests' => $guests,
+            'guestsPlusOne' => $guestsPlusOne,
             'query' => $query
         ]);
     }

@@ -33,7 +33,7 @@ class HomeController extends AbstractController
             $data = $form->getData();
            $email = (new TemplatedEmail())
                ->from(new Address($data['mail']))
-               ->to(new Address('baillet.manon@gmail.com', 'Manon Baillet'))
+               ->to(new Address('mariage.manon.xavier@gmail.com', 'Mariage Manon & Xavier'))
                ->subject('Formulaire de contact Mariage')
                ->htmlTemplate('message/contact.html.twig')
                ->context([

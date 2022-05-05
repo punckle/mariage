@@ -18,4 +18,17 @@ class GuestRepository extends ServiceEntityRepository
     {
         parent::__construct($registry, Guest::class);
     }
+
+    public function getGuestsFromResearch($query)
+    {
+        $qb = $this->createQueryBuilder('entity')
+            ->where("(LOWER(entity.lastName) LIKE LOWER(:query))")
+            ->orWhere("(LOWER(entity.firstName) LIKE LOWER(:query))")
+            ->setParameter('query', "%".$query."%")
+            ->orderBy('entity.lastName', 'ASC')
+            ->addOrderBy('entity.firstName', 'ASC')
+        ;
+
+        return $qb->getQuery()->execute();
+    }
 }

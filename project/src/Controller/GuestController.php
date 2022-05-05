@@ -37,7 +37,7 @@ class GuestController extends AbstractController
     public function index(GuestRepository $guestRepository): Response
     {
         return $this->render('guest/index.html.twig', [
-            'guests' => $guestRepository->findAll(),
+            'guests' => $guestRepository->findBy([], ['lastName' => 'ASC']),
         ]);
     }
 
@@ -124,7 +124,7 @@ class GuestController extends AbstractController
         if ($data['name']) {
             $email = (new TemplatedEmail())
                 ->from(new Address('baillet.manon@gmail.com'))
-                ->to(new Address('baillet.manon@gmail.com'))
+                ->to(new Address('mariage.manon.xavier@gmail.com'))
                 ->subject('Code invitation au mariage perdu')
                 ->htmlTemplate('message/code_perdu.html.twig')
                 ->context([

@@ -19,11 +19,129 @@
             <div class="col-6 text-center">
                 <a href="{{ path('admin') }}" class="btn btn-outline-dark"><i class="fas fa-arrow-circle-left"></i></a>
             </div>
+            <div class="col-6 text-center">
+                <a href="{{ path('admin') }}" class="btn btn-outline-dark"><i class="fas fa-home"></i></a>
+            </div>
+        </div>
+
+        <div class="p-lg-5 mx-auto my-2">
+            {% if guests|length > 0 %}
+            <div class="jumbotron">
+                <div class="container">
+                    <h2 class="text-center mb-5">Groupes</h2>
+                </div>
+            </div>
+            {% endif %}
+            {% if guests|length > 0 %}
+                <table class="table table-hover">
+                    <thead>
+                    <tr>
+                        <th scope="col">Nom & Prénom</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Code</th>
+                        <th scope="col">Code activé</th>
+                        <th scope="col">Nb initial</th>
+                        <th scope="col">Nb final</th>
+                        <th scope="col">Vient</th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for guest in guests %}
+                        <tr class="table-light">
+                            <th scope="row">{{ guest.lastName }} {{ guest.firstName }}</th>
+                            <th>{{ guest.email }}</th>
+                            <th>
+                                {% if guest.code %}
+                                    {{ guest.code }}
+                                {% else %}
+                                    <a href="{{ path('generate_code', {'id': guest.id}) }}" class="btn btn-success btn-sm"><i class="fas fa-plus-square"></i></a>
+                                {% endif %}
+                            </th>
+                            <th>
+                                {% if guest.codeActif %}
+                                    <span class="badge badge-success">
+                                        <i class="fas fa-check"></i>
+                                    </span>
+                                {% else %}
+                                    <span class="badge badge-danger">
+                                        <i class="fas fa-times"></i>
+                                    </span>
+                                {% endif %}
+                            </th>
+                            <th>{{ guest.initialNbPeople }}</th>
+                            <th>
+                                <a href="{{ path('show_plus_ones', {'id': guest.id}) }}" style="text-decoration: none; color: black">
+                                    {{ guest.finalNbPeople }}
+                                </a>
+                            </th>
+                            <th>
+                                {% if guest.come %}
+                                    <span class="badge badge-success">
+                                        <i class="fas fa-check"></i>
+                                    </span>
+                                {% else %}
+                                    <span class="badge badge-danger">
+                                        <i class="fas fa-times"></i>
+                                    </span>
+                                {% endif %}
+                            </th>
+                            <th>
+                                <a href="{{ path('show_plus_ones', {'id': guest.id}) }}" class="btn btn-outline-info btn-sm">
+                                    <i class="fas fa-search"></i>
+                                </a>
+                            </th>
+                            <th>
+                                <a href="{{ path('guest_edit', {'id': guest.id}) }}" class="btn btn-outline-warning btn-sm">
+                                    <i class="fas fa-pen"></i>
+                                </a>
+                            </th>
+                            <th>
+                                {% if guest.guestPlusOnes|length == 0 %}
+                                    <button type="button" class="btn btn-outline-danger btn-sm" data-toggle="modal" data-target="#myModal">
+                                        <i class="fas fa-trash-alt"></i>
+                                    </button>
+                                    <!-- Modal -->
+                                    <div id="myModal" class="modal fade" role="dialog">
+                                        <div class="modal-dialog">
+                                            <!-- Modal content-->
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <h4>Êtes-vous certain(e) de vouloir supprimer ce groupe d'invités ?</h4>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="button btn-danger">
+                                                        <a href="{{ path('guest_delete', {'id': guest.id}) }}" style="text-decoration: none; color: white;">Oui</a>
+                                                    </button>
+                                                    <button class="button btn-success" data-dismiss="modal">Non</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                {% endif %}
+                            </th>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            {% endif %}
         </div>
 
 
         <div class="p-lg-5 mx-auto my-2">
-            {% if guests|length > 0 %}
+            {% if guestsPlusOne|length > 0 %}
+            <div class="jumbotron">
+                <div class="container">
+                    <h2 class="text-center mb-5">Invités</h2>
+                </div>
+            </div>
+            {% endif %}
+            {% if guestsPlusOne|length > 0 %}
                 <table class="table table-hover">
                     <thead>
                     <tr>
@@ -39,7 +157,7 @@
                     </tr>
                     </thead>
                     <tbody>
-                    {% for guest in guests %}
+                    {% for guest in guestsPlusOne %}
                         <tr class="table-light">
                             <th scope="row">{{ guest.lastName }} {{ guest.firstName }}</th>
                             <th>
@@ -120,11 +238,6 @@
                     {% endfor %}
                     </tbody>
                 </table>
-            {% else %}
-                <div class="alert alert-dismissible alert-warning">
-                    <h4 class="alert-heading">Aucun invité !</h4>
-                    <p class="mb-0">Il n'y a malheureusement aucun invité</p>
-                </div>
             {% endif %}
         </div>
     </div>

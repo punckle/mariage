@@ -19,7 +19,7 @@ class GuestPlusOneRepository extends ServiceEntityRepository
         parent::__construct($registry, GuestPlusOne::class);
     }
 
-    public function getGuestFromResearch($query)
+    public function getGuestsPlusOneFromResearch($query)
     {
         $qb = $this->createQueryBuilder('entity')
             ->where("(LOWER(entity.lastName) LIKE LOWER(:query))")
