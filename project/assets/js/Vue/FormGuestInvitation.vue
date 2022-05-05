@@ -77,6 +77,11 @@
                   <input v-model="number" type="number">
                 </div>
               </div>
+              <div class="row" v-if="form.isPresent === true && form.number !== null && form.number <= guest.initialNbPeople">
+                <div class="col text-center my-2">
+                  <button class="btn btn-primary" @click="confirmNumberPeople">Confirmer le nombre de personnes</button>
+                </div>
+              </div>
             </div>
 
             <div v-if="form.isPresent === true && form.number !== null && form.number > guest.initialNbPeople" class="alert alert-warning">
@@ -84,9 +89,9 @@
               merci de contacter Manon & Xavier <i class="fas fa-smile"></i>
             </div>
 
-            <hr v-if="form.isPresent === true && form.number !== null && form.number <= guest.initialNbPeople">
+            <hr v-if="form.isPresent === true && form.number !== null && form.number <= guest.initialNbPeople && form.guests.length !== 0">
 
-            <div v-if="form.isPresent === true && form.number !== null && form.number <= guest.initialNbPeople">
+            <div v-if="form.isPresent === true && form.number !== null && form.number <= guest.initialNbPeople && form.guests.length !== 0">
               <div class="row">
                 <div class="col text-center my-2">
                   Merci de répondre au formulaire pour chaque personne (même vous !)
@@ -154,7 +159,7 @@
               </div>
             </div>
 
-            <div v-if="form.isPresent === true && form.number !== null && form.number <= guest.initialNbPeople">
+            <div v-if="form.isPresent === true && form.number !== null && form.number <= guest.initialNbPeople && form.guests.length !== 0">
               <div class="row">
                 <div class="col text-center my-2">
                   Si vous le voulez, vous pouvez laisser un petit message aux futurs mariés :
@@ -288,15 +293,20 @@ export default {
           }
         })
       }
+    },
+    confirmNumberPeople() {
+      this.form.guests = Array.from(
+          { length: this.number },
+          () => ({ 'firstName': '', 'lastName': '', 'comment': '', 'apero': false, 'dinner': false, 'kid': false })
+      );
+
+      console.log(this.form.guests);
     }
   },
   watch: {
     number: function (val) {
       if (val && val.length > 0) {
         this.form.number = val
-        for (let i = 0; i < val; i++) {
-          this.form.guests.push({ 'firstName': '', 'lastName': '', 'comment': '', 'apero': false, 'dinner': false, 'kid': false })
-        }
       }
       if (val.length === 0) {
         this.form.guests = []

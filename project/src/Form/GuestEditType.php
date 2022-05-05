@@ -53,7 +53,8 @@ class GuestEditType extends AbstractType
                 'label' => false,
                 'attr' => [
                     'placeholder' => 'Code'
-                ]
+                ],
+                'required' => false
             ])
             ->add('codeActif', CheckboxType::class, [
                 'required' => false,
