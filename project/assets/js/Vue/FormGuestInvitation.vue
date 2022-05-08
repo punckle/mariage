@@ -127,7 +127,7 @@
 
                     <div class="row justify-content-around" v-if="number && number > 0">
                       <div class="col my-2" v-if="number && number > 0 && guest.isInvitedApero">
-                        <button v-if="form.guests[index].kid === true" class="btn btn-success contact"
+                        <button v-if="form.guests[index].kid === true" class="btn btn-success contact" title="Est-ce un enfant dont il s'agit ?"
                                 v-on:click="updateKid(form.guests[index])"><i class="fas fa-child"></i> Enfant
                         </button>
                         <button v-if="form.guests[index].kid === false" class="btn btn-light contact"
@@ -137,7 +137,7 @@
                     </div>
                     <div class="row justify-content-around" v-if="number && number > 0">
                       <div class="col my-2" v-if="number && number > 0 && guest.isInvitedApero">
-                        <button v-if="form.guests[index].apero === true" class="btn btn-success contact"
+                        <button v-if="form.guests[index].apero === true" class="btn btn-success contact" title="L'invité sera-t-il présent au cocktail ?"
                                 v-on:click="updateApero(form.guests[index])"><i class="fas fa-cocktail"></i> Cocktail
                         </button>
                         <button v-if="form.guests[index].apero === false" class="btn btn-light contact"
@@ -149,7 +149,7 @@
                       <div class="col my-2 contact" v-if="number && number > 0 && guest.isInvitedApero && guest.isInvitedDinner">
                         <button v-if="form.guests[index].dinner === true" class="btn btn-success contact" v-on:click="updateDinner(form.guests[index])"><i class="fas fa-utensils"></i> Dîner
                         </button>
-                        <button v-if="form.guests[index].dinner === false" class="btn btn-light contact"
+                        <button v-if="form.guests[index].dinner === false" class="btn btn-light contact" title="L'invité sera-t-il présent au dîner ?"
                                 v-on:click="updateDinner(form.guests[index])"><i class="fas fa-utensils"></i> Dîner
                         </button>
                       </div>

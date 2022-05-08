@@ -3,7 +3,7 @@
 {% block title %}Le mariage{% endblock %}
 
 {% block stylesheets %}
-    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/admin.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/about.css') }}">
 {% endblock %}
 
 {% block body %}
@@ -11,5 +11,81 @@
         <div class="col-md-5 p-lg-5 mx-auto my-5">
             <h1 class="display-4 font-weight-normal">Le mariage</h1>
         </div>
+    </div>
+
+    <div class="container">
+        <p class="text-justify mt-5">
+            Vous trouverez ici toutes les informations relatives au mariage.
+            <br>
+            <br>
+            Si vous avez des questions, n'hésitez pas à nous les poser via le <a href="{{ path('contact') }}">formulaire de contact</a>.
+        </p>
+    </div>
+
+    <div class="container mt-5 mb-5">
+
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+                <ul class="timeline">
+                    <li>
+                        <p class="font-weight-bold">La mairie</p>
+                        <p class="text-justify">
+                            <i><u>Famille proche et témoins uniquement</u></i>
+                            <br>
+                            La famille proche et les témoins sont conviés à la mairie, où le papa de la future mariée célébrera le mariage.
+                            <br>
+                            <br>
+                            <i class="far fa-clock"></i> Rendez-vous à 13h45
+                            <br>
+                            <i class="fas fa-map-marker-alt"></i> Mairie de La Petite-Pierre
+                            <br>
+                            22 Rue Principale
+                            <br>
+                            67290 La Petite-Pierre
+                        </p>
+                    </li>
+                    <li>
+                        <p class="font-weight-bold">La cérémonie</p>
+                        <p class="text-justify">
+                            Tous les invités sont les bienvenus à la cérémonie.
+                            <br>
+                            <br>
+                            <i class="far fa-clock"></i> Rendez-vous à 15h45
+                            <br>
+                            <i class="fas fa-map-marker-alt"></i> Auberge Saint-Ulrich
+                            <br>
+                            4 Chemin Saint-Ulrich
+                            <br>
+                            57400 Haut-Clocher
+                        </p>
+                    </li>
+                    <li>
+                        <p class="font-weight-bold">Le cocktail</p>
+                        <p class="text-justify">
+                            Après la cérémonie, à 17h, les invités sont attendus pour trinquer avec les futurs mariés
+                            <br>
+                            <br>
+                            <i class="far fa-clock"></i> Rendez-vous à 17h
+                            <br>
+                            <i class="fas fa-map-marker-alt"></i> Espace Clément de l'Auberge Saint-Ulrich
+                            <br>
+                            4 Chemin Saint-Ulrich
+                            <br>
+                            57400 Haut-Clocher
+                        </p>
+                    </li>
+                    <li>
+                        <p class="font-weight-bold"> Le dîner</p>
+                        <p class="text-justify">
+                            Cet après-midi de célébration se poursuivra jusqu'au bout de la nuit avec la famille et les amis
+                            les plus proches des mariés.
+                            <br>
+                            Venez avec votre bonne humeur et vos meilleurs déhanchés pour enflammer la piste de danse !
+                        </p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
     </div>
 {% endblock %}

@@ -37,7 +37,10 @@ class GuestController extends AbstractController
     public function index(GuestRepository $guestRepository): Response
     {
         return $this->render('guest/index.html.twig', [
-            'guests' => $guestRepository->findBy([], ['lastName' => 'ASC']),
+            'guests' => $guestRepository->findBy([], [
+                'lastName' => 'ASC',
+                'firstName' => 'ASC'
+            ]),
         ]);
     }
 
@@ -150,9 +153,16 @@ class GuestController extends AbstractController
     public function getCodeGuest(Request $request): JsonResponse
     {
         $data = json_decode($request->getContent(), true);
+
+        if (is_null($data['code'])) {
+            return new JsonResponse([
+                'status' => 'ko'
+            ]);
+        }
+
         $guest = $this->em->getRepository(Guest::class)->findOneBy(['code' => $data['code']]);
 
-        if ($guest && !$guest->getCodeActif()) {
+        if (!is_null($guest) && !$guest->getCodeActif()) {
             return new JsonResponse([
                 'status' => 'ok',
                 'guest' => $guest->toJson()
@@ -293,7 +303,10 @@ class GuestController extends AbstractController
      */
     public function allInvites(): Response
     {
-        $allGuests = $this->em->getRepository(GuestPlusOne::class)->findBy([], ['lastName' => 'ASC']);
+        $allGuests = $this->em->getRepository(GuestPlusOne::class)->findBy([], [
+            'lastName' => 'ASC',
+            'firstName' => 'ASC'
+        ]);
 
         return $this->render('guest/all_guests.html.twig', [
             'allGuests' => $allGuests
@@ -331,7 +344,10 @@ class GuestController extends AbstractController
      */
     public function exportGuests(ExportGuestService $exportGuestService): Response
     {
-        $guests = $this->em->getRepository(GuestPlusOne::class)->findAll();
+        $guests = $this->em->getRepository(GuestPlusOne::class)->findBy([], [
+            'lastName' => 'ASC',
+            'firstName' => 'ASC'
+        ]);
         $spreadsheet = $exportGuestService->export($guests);
 
         $writer = new Xlsx($spreadsheet);
