@@ -95,11 +95,11 @@
                             </th>
                             <th>
                                 {% if guest.guestPlusOnes|length == 0 %}
-                                <button type="button" class="btn btn-outline-danger btn-sm" data-toggle="modal" data-target="#myModal">
+                                <button type="button" class="btn btn-outline-danger btn-sm" data-toggle="modal" data-target="#myModal-{{ guest.id }}">
                                     <i class="fas fa-trash-alt"></i>
                                 </button>
                                 <!-- Modal -->
-                                <div id="myModal" class="modal fade" role="dialog">
+                                <div id="myModal-{{ guest.id }}" class="modal fade" role="dialog">
                                     <div class="modal-dialog">
                                         <!-- Modal content-->
                                         <div class="modal-content">
