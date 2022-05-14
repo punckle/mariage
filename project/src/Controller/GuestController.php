@@ -101,6 +101,10 @@ class GuestController extends AbstractController
         return $this->redirectToRoute('guest_index');
     }
 
+    /**
+     * @Route("/guestPlusOne/{id}/delete", name="guest_plus_one_delete")
+     * @IsGranted("ROLE_ADMIN")
+     */
     public function deleteGuestPlusOne(GuestPlusOne $guestPlusOne): Response
     {
         $this->em->remove($guestPlusOne);

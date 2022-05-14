@@ -110,11 +110,11 @@
                                 </a>
                             </th>
                             <th>
-                                <button type="button" class="btn btn-outline-danger" data-toggle="modal" data-target="#myModal-{{ guest.id }}">
+                                <button type="button" class="btn btn-outline-danger" data-toggle="modal" data-target="#myModalAllGuests-{{ guest.id }}">
                                     <i class="fas fa-trash-alt"></i>
                                 </button>
                                 <!-- Modal -->
-                                <div id="myModal-{{ guest.id }}" class="modal fade" role="dialog">
+                                <div id="myModalAllGuests-{{ guest.id }}" class="modal fade" role="dialog">
                                     <div class="modal-dialog">
                                         <!-- Modal content-->
                                         <div class="modal-content">
@@ -126,7 +126,7 @@
                                             </div>
                                             <div class="modal-footer">
                                                 <button type="button" class="button btn-danger">
-                                                    <a href="{{ path('guest_delete', {'id': guest.id}) }}" style="text-decoration: none; color: white;">Oui</a>
+                                                    <a href="{{ path('guest_plus_one_delete', {'id': guest.id}) }}" style="text-decoration: none; color: white;">Oui</a>
                                                 </button>
                                                 <button class="button btn-success" data-dismiss="modal">Non</button>
                                             </div>
