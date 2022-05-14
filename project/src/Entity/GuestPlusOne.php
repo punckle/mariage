@@ -60,6 +60,12 @@ class GuestPlusOne
      */
     private $kid = false;
 
+    /**
+     * @ORM\Column(type="boolean")
+     * @var boolean
+     */
+    private $ceremony = false;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -145,6 +151,18 @@ class GuestPlusOne
     public function setKid(bool $kid): self
     {
         $this->kid = $kid;
+
+        return $this;
+    }
+
+    public function getCeremony(): bool
+    {
+        return $this->ceremony;
+    }
+
+    public function setCeremony(bool $ceremony): self
+    {
+        $this->ceremony = $ceremony;
 
         return $this;
     }

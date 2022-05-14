@@ -137,6 +137,16 @@
                     </div>
                     <div class="row justify-content-around" v-if="number && number > 0">
                       <div class="col my-2" v-if="number && number > 0 && guest.isInvitedApero">
+                        <button v-if="form.guests[index].ceremony === true" class="btn btn-success contact" title="L'invité sera-t-il présent à la cérémonie ?"
+                                v-on:click="updateCeremony(form.guests[index])"><i class="fas fa-heart"></i> Cérémonie
+                        </button>
+                        <button v-if="form.guests[index].ceremony === false" class="btn btn-light contact"
+                                v-on:click="updateCeremony(form.guests[index])"><i class="fas fa-heart"></i> Cérémonie
+                        </button>
+                      </div>
+                    </div>
+                    <div class="row justify-content-around" v-if="number && number > 0">
+                      <div class="col my-2" v-if="number && number > 0 && guest.isInvitedApero">
                         <button v-if="form.guests[index].apero === true" class="btn btn-success contact" title="L'invité sera-t-il présent au cocktail ?"
                                 v-on:click="updateApero(form.guests[index])"><i class="fas fa-cocktail"></i> Cocktail
                         </button>
@@ -246,6 +256,9 @@ export default {
     updateKid(guest) {
       guest.kid = !guest.kid
     },
+    updateCeremony(guest) {
+      guest.ceremony = !guest.ceremony
+    },
     updateApero(guest) {
       guest.apero = !guest.apero
     },
@@ -297,10 +310,8 @@ export default {
     confirmNumberPeople() {
       this.form.guests = Array.from(
           { length: this.number },
-          () => ({ 'firstName': '', 'lastName': '', 'comment': '', 'apero': false, 'dinner': false, 'kid': false })
+          () => ({ 'firstName': '', 'lastName': '', 'comment': '', 'ceremony': false, 'apero': false, 'dinner': false, 'kid': false })
       );
-
-      console.log(this.form.guests);
     }
   },
   watch: {

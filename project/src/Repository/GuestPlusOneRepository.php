@@ -31,4 +31,17 @@ class GuestPlusOneRepository extends ServiceEntityRepository
 
         return $qb->getQuery()->execute();
     }
+
+    public function getAllGuests(): array
+    {
+        $qb = $this->createQueryBuilder('entity')
+            ->leftJoin('entity.guest', 'guest')
+            ->orderBy('guest.lastName', 'ASC')
+            ->addOrderBy('guest.firstName', 'ASC')
+            ->addOrderBy('entity.lastName', 'ASC')
+            ->addOrderBy('entity.firstName', 'ASC')
+            ;
+
+        return $qb->getQuery()->execute();
+    }
 }

@@ -303,10 +303,7 @@ class GuestController extends AbstractController
      */
     public function allInvites(): Response
     {
-        $allGuests = $this->em->getRepository(GuestPlusOne::class)->findBy([], [
-            'lastName' => 'ASC',
-            'firstName' => 'ASC'
-        ]);
+        $allGuests = $this->em->getRepository(GuestPlusOne::class)->getAllGuests();
 
         return $this->render('guest/all_guests.html.twig', [
             'allGuests' => $allGuests
@@ -344,10 +341,7 @@ class GuestController extends AbstractController
      */
     public function exportGuests(ExportGuestService $exportGuestService): Response
     {
-        $guests = $this->em->getRepository(GuestPlusOne::class)->findBy([], [
-            'lastName' => 'ASC',
-            'firstName' => 'ASC'
-        ]);
+        $guests = $this->em->getRepository(GuestPlusOne::class)->getAllGuests();
         $spreadsheet = $exportGuestService->export($guests);
 
         $writer = new Xlsx($spreadsheet);
@@ -374,6 +368,7 @@ class GuestController extends AbstractController
             $plusOne = new GuestPlusOne();
             $plusOne->setFirstName($dataPlusOne['firstName']);
             $plusOne->setLastName($dataPlusOne['lastName']);
+            $plusOne->setCeremony($dataPlusOne['ceremony']);
             $plusOne->setApero($dataPlusOne['apero']);
             $plusOne->setDinner($dataPlusOne['dinner']);
             $plusOne->setComment($dataPlusOne['comment']);
