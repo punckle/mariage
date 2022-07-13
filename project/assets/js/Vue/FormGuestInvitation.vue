@@ -125,6 +125,15 @@
                       </div>
                     </div>
 
+                    <div class="row justify-content-around">
+                      <p>
+                        Merci de préciser s'il s'agit d'un enfant et s'il/elle sera présent(e)
+                        à la cérémonie, au cocktail et, si c'est prévu, au dîner. <br>
+                        Pour cela, il suffit de cliquer sur les différents
+                        boutons ci-dessous <i class="far fa-smile"></i>
+                      </p>
+                    </div>
+
                     <div class="row justify-content-around" v-if="number && number > 0">
                       <div class="col my-2" v-if="number && number > 0 && guest.isInvitedApero">
                         <button v-if="form.guests[index].kid === true" class="btn btn-success contact" title="Est-ce un enfant dont il s'agit ?"
@@ -186,7 +195,7 @@
           Merci d'indiquer au moins un prénom à chaque invité.
         </div>
           <div class="float-right">
-            <button class="btn btn-success contact" type="submit" v-if="validCode && form.isPresent !== null && form.number !== null && form.number <= guest.initialNbPeople && form.guests.length !== 0" v-on:click="saveGuestInvitation">
+            <button class="btn btn-success contact" type="submit" v-if="validCode && form.isPresent !== null" v-on:click="saveGuestInvitation">
               Envoyer les informations
             </button>
           </div>
